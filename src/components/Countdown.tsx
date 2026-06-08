@@ -42,27 +42,27 @@ export default function Countdown() {
   return (
     <section
       id="countdown"
-      className="bg-[var(--bg-countdown)] text-center py-[6rem] sm:py-[8.8rem] px-[2rem] sm:px-[2.4rem]"
+      className="bg-(--bg-countdown) text-center py-24 sm:py-[8.8rem] px-8 sm:px-[2.4rem]"
     >
-      <p className="text-[0.9rem] tracking-[0.32em] uppercase text-[var(--color-gold)] mb-[4rem] sm:mb-[5.2rem]">
+      <p className="text-[1rem] md:text-[1.2rem] tracking-[0.32em] uppercase text-(--color-gold) mb-16 sm:mb-[5.2rem]">
         Counting Down To Forever
       </p>
 
-      {/* 4 across on desktop, 2x2 on mobile */}
-      <div className="inline-grid grid-cols-2 sm:grid-cols-4 border-[0.5px] border-[var(--color-gold-dim)]">
+      <div className="grid grid-cols-2 sm:grid-cols-4 border-[0.5px] border-(--color-gold-dim)  w-[20rem] sm:w-260 mx-auto">
         {units.map(({ label, value, pad }, i) => (
           <div
             key={label}
-            className={`flex flex-col items-center px-[3rem] sm:px-[4.4rem] py-[2.4rem] sm:py-[2.8rem]
-              ${i % 2 !== 1 ? "border-r-[0.5px] border-[var(--color-gold-dim)]" : ""}
-              ${i < 2 ? "border-b-[0.5px] border-[var(--color-gold-dim)] sm:border-b-0" : ""}
-              sm:border-r-[0.5px] sm:last:border-r-0
+            className={`flex flex-col items-center px-12 sm:px-[4.4rem] py-[2.4rem] sm:py-[2.8rem]
+              ${i % 2 === 0 ? "border-r-[0.5px] border-(--color-gold-dim)" : ""}
+              ${i < 2 ? "border-b-[0.5px] border-(--color-gold-dim) sm:border-b-0" : ""}
+              ${i < 3 ? "sm:border-r-[0.5px] sm:border-(--color-gold-dim)" : ""}
             `}
           >
-            <span className="font-serif text-[clamp(4rem,8vw,8.8rem)] font-light text-[var(--color-gold-light)] leading-none">
+            <span className="font-serif text-[clamp(4rem,8vw,8.8rem)] font-light text-(--color-gold-light) leading-none">
               {mounted ? (pad ? String(value).padStart(2, "0") : value) : "—"}
             </span>
-            <span className="block text-[0.8rem] sm:text-[0.9rem] tracking-[0.24em] uppercase text-[var(--color-text-inverse-muted)] mt-[0.8rem]">
+
+            <span className="block text-[0.8rem] sm:text-[1rem] tracking-[0.24em] uppercase text-(--color-text-muted) mt-[0.8rem]">
               {label}
             </span>
           </div>

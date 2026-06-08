@@ -1,8 +1,8 @@
-import { MapPin, Clock, Shirt } from "lucide-react";
+// import { MapPin, Clock, Shirt } from "lucide-react";
 
 interface DetailCard {
   number: string;
-  icon: React.ReactNode;
+  // icon: React.ReactNode;
   label: string;
   value: string;
   sub: string;
@@ -11,21 +11,21 @@ interface DetailCard {
 const DETAILS: DetailCard[] = [
   {
     number: "①",
-    icon: <MapPin size={16} />,
+    // icon: <MapPin size={16} />,
     label: "Ceremony",
     value: "Church of the Resurrection",
     sub: "10:00 AM · Victoria Island, Lagos",
   },
   {
     number: "②",
-    icon: <Clock size={16} />,
+    // icon: <Clock size={16} />,
     label: "Reception",
     value: "The Landmark Beach Event Centre",
     sub: "2:00 PM · Oniru, Lagos",
   },
   {
     number: "③",
-    icon: <Shirt size={16} />,
+    // icon: <Shirt size={16} />,
     label: "Dress Code",
     value: "Champagne & Ivory",
     sub: "Aso-ebi details on request",
@@ -64,7 +64,7 @@ export default function EventDetails() {
                 {detail.number}
               </span>
               <div className="text-[var(--color-text-muted)] mb-[0.4rem]">
-                {detail.icon}
+                {/* {detail.icon} */}
               </div>
               <p className="text-[0.9rem] tracking-[0.22em] uppercase text-[var(--color-text-muted)]">
                 {detail.label}
