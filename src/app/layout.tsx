@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Adedamola & Oluwaseun · 16.08.2026",
+  title: "Adedamola & Oluwaseun · 15.08.2026",
   description:
     "Join us as we celebrate our union. 16 August 2026 · Lagos, Nigeria",
 };
