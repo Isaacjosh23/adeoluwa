@@ -1,9 +1,10 @@
-import { useOurStory } from "@/hooks/useOurStory";
+import { useOurStoryContext } from "@/context/OurStoryContext";
 import { MEMORIES } from "@/lib/memories";
 import Image from "next/image";
 
 function Card() {
-  const { onDragStart, onDragMove, onDragEnd, getCardStyle } = useOurStory();
+  const { onDragStart, onDragMove, onDragEnd, getCardStyle } =
+    useOurStoryContext();
 
   return (
     <div

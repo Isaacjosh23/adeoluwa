@@ -1,8 +1,8 @@
-import { useOurStory } from "@/hooks/useOurStory";
+import { useOurStoryContext } from "@/context/OurStoryContext";
 import { MEMORIES } from "@/lib/memories";
 
 function Progress() {
-  const { current } = useOurStory();
+  const { current } = useOurStoryContext();
 
   return (
     <div className="flex justify-center gap-[0.6rem] sm:gap-[0.7rem] mt-[3.2rem] sm:mt-16 px-16">

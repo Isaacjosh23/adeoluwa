@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { createContext, useContext, useState, useRef, ReactNode } from "react";
 import { MEMORIES } from "@/lib/memories";
 
-export function useOurStory() {
+function useOurStory() {
   const [current, setCurrent] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragX, setDragX] = useState(0);
@@ -143,4 +143,27 @@ export function useOurStory() {
     prevCard,
     getCardStyle,
   };
+}
+
+type OurStoryContextType = ReturnType<typeof useOurStory>;
+
+const OurStoryContext = createContext<OurStoryContextType | undefined>(
+  undefined,
+);
+
+export function OurStoryProvider({ children }: { children: ReactNode }) {
+  const value = useOurStory();
+  return (
+    <OurStoryContext.Provider value={value}>
+      {children}
+    </OurStoryContext.Provider>
+  );
+}
+
+export function useOurStoryContext() {
+  const context = useContext(OurStoryContext);
+  if (!context) {
+    throw new Error("useOurStoryContext must be used within OurStoryProvider");
+  }
+  return context;
 }

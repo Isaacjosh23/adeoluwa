@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Progress from "./components/Progress";
 import NavButton from "./components/NavButton";
 import Header from "./components/Header";
+import { OurStoryProvider } from "@/context/OurStoryContext";
 
 export default function OurStory() {
   return (
@@ -13,11 +14,13 @@ export default function OurStory() {
     >
       <Header />
 
-      <Card />
+      <OurStoryProvider>
+        <Card />
 
-      <Progress />
+        <Progress />
 
-      <NavButton />
+        <NavButton />
+      </OurStoryProvider>
     </section>
   );
 }

@@ -3,8 +3,10 @@ import ChurchIcon from "./church";
 import ClockIcon from "./clock";
 import DateIcon from "./date";
 import HallIcon from "./hall";
+import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
 import MuteIcon from "./mute";
+import RightArrowIcon from "./right-arrow";
 import RightDiagonalArrowIcon from "./right-diagonal-arrow";
 import ShirtIcon from "./shirt";
 import UnmuteIcon from "./unmute";
@@ -29,11 +31,17 @@ export function Icon({ type, className }: Props) {
     case "hall":
       return <HallIcon {...props} />;
 
+    case "arrow-left":
+      return <LeftArrowIcon {...props} />;
+
     case "map-pin":
       return <MapPinIcon {...props} />;
 
     case "mute":
       return <MuteIcon {...props} />;
+
+    case "arrow-right":
+      return <RightArrowIcon {...props} />;
 
     case "right-diagonal-arrow":
       return <RightDiagonalArrowIcon {...props} />;
