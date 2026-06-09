@@ -3,9 +3,9 @@ export default function Marquee() {
     "Forever Starts Here",
     "Two Became One",
     "It Was Always You",
-    "16 · 08 · 2026",
-    "Lagos in Love",
-    "#AdaAndEmma2026",
+    "15 · 08 · 2026",
+    "Ilorin in Love",
+    "#AdeOluwa26",
   ];
 
   return (

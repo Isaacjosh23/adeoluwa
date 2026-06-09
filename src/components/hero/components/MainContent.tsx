@@ -5,16 +5,16 @@ function MainContent() {
 
   return (
     <div className="relative z-2 text-center flex flex-col items-center pt-40 pb-32 px-8 sm:pt-48 sm:pb-40 sm:px-[2.4rem]">
-      <p className="text-[0.9rem] sm:text-[1rem] tracking-[0.3em] uppercase text-(--color-gold) mb-8 sm:mb-[2.8rem] opacity-0 animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:forwards]">
+      <p className="text-[1rem] md:text-[1.2rem] font-medium tracking-[0.3em] uppercase text-(--color-gold) mb-8 sm:mb-[2.8rem] opacity-0 animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:forwards]">
         We are getting married
       </p>
 
       <h1 className="font-serif text-[clamp(5rem,10vw,11.8rem)] font-light leading-none tracking-tight text-(--color-text-inverse) opacity-0 animate-fadeUp [animation-delay:0.6s] [animation-fill-mode:forwards]">
-        <em className="italic text-(--color-gold)">Adaeze</em>
+        <em className="italic text-(--color-gold)">Adedamola</em>
         <span className="block font-serif italic text-[clamp(2rem,4vw,4rem)] text-(--color-text-inverse-muted) my-[0.6rem] sm:my-[0.8rem]">
           &
         </span>
-        Emmanuel
+        Oluwaseun
       </h1>
 
       {/* Divider */}
@@ -26,12 +26,12 @@ function MainContent() {
         <span className="inline-block w-[0.15rem] h-[0.9em] bg-(--color-gold) ml-[0.2rem] align-middle animate-blink" />
       </div>
 
-      <p className="mt-8 sm:mt-[2.4rem] text-[0.9rem] sm:text-[1.1rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-[rgba(250,247,242,0.38)] opacity-0 animate-fadeUp [animation-delay:1.3s] [animation-fill-mode:forwards] px-4">
-        Saturday · 16 August 2026 · Lagos, Nigeria
+      <p className="mt-8 sm:mt-[2.4rem] text-[1rem] md:text-[1.2rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-[rgba(250,247,242,0.38)] opacity-0 animate-fadeUp [animation-delay:1.3s] [animation-fill-mode:forwards] px-4">
+        Saturday · 15th August 2026
       </p>
 
       <p className="font-serif italic text-[1.3rem] sm:text-[1.4rem] text-(--color-gold) mt-[0.6rem] tracking-[0.06em] opacity-0 animate-fadeUp [animation-delay:1.5s] [animation-fill-mode:forwards]">
-        #AdaAndEmma2026
+        #AdeOluwa26
       </p>
     </div>
   );

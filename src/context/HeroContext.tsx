@@ -15,7 +15,7 @@ const PHRASES = [
   "Two hearts found their way home.",
   "Every love story is beautiful...",
   "...but ours is our favourite.",
-  "August 16th, we say forever. ✦",
+  "August 15th, we say forever. ✦",
 ];
 
 interface HeroContextType {

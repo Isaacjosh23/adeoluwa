@@ -19,7 +19,7 @@ function HomeContent() {
       <Hero />
       <Marquee />
       <Countdown />
-      {/* <OurStory /> */}
+      <OurStory />
       <EventDetails />
       <ColoursOfTheDay />
     </>
