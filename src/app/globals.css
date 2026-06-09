@@ -1,26 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap");
+
 @import "tailwindcss";
 
+/* ── ROOT TOKENS ── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ─────────────────────────────────────
+     BRAND COLOURS
+  ───────────────────────────────────── */
+
+  /* Primary — Gold */
+  --color-gold: #c4913a;
+  --color-gold-light: #f0d898;
+  --color-gold-dim: rgba(196, 145, 58, 0.18);
+  --color-gold-mist: rgba(196, 145, 58, 0.06);
+
+  /* Neutrals — Light */
+  --color-cream: #faf7f2;
+  --color-warm-white: #fdf9f4;
+  --color-champagne: #e8d5b0;
+
+  /* Neutrals — Dark */
+  --color-dark: #0e0c0b;
+  --color-dark-2: #1a1714;
+  --color-dark-overlay: rgba(14, 12, 11, 0.75);
+
+  /* Accent */
+  --color-brown: #6b4c2a;
+
+  /* Text */
+  --color-text-primary: #1a1714;
+  --color-text-body: #3a3530;
+  --color-text-muted: #9a8b7a;
+  --color-text-inverse: #faf7f2;
+  --color-text-inverse-muted: rgba(250, 247, 242, 0.45);
+
+  /* ─────────────────────────────────────
+     COLOUR SWATCHES (day-of palette)
+  ───────────────────────────────────── */
+  --swatch-champagne: #f5edd8;
+  --swatch-gold: #c4913a;
+  --swatch-sandy-cream: #e8d5b0;
+  --swatch-brown: #6b4c2a;
+  --swatch-ebony: #1a1714;
+
+  /* ─────────────────────────────────────
+     TYPOGRAPHY
+  ───────────────────────────────────── */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Jost", system-ui, sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* ─────────────────────────────────────
+     SPACING SCALE
+  ───────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  /* ─────────────────────────────────────
+     BORDER RADIUS
+  ───────────────────────────────────── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────
+     BORDERS
+  ───────────────────────────────────── */
+  --border-gold: 0.5px solid var(--color-gold);
+  --border-gold-dim: 0.5px solid var(--color-gold-dim);
+  --border-champagne: 0.5px solid var(--color-champagne);
+
+  /* ─────────────────────────────────────
+     SHADOWS
+  ───────────────────────────────────── */
+  --shadow-card: 0 8px 32px rgba(26, 23, 20, 0.12);
+  --shadow-card-lg: 0 16px 48px rgba(26, 23, 20, 0.2);
+  --shadow-lift: 0 4px 16px rgba(26, 23, 20, 0.08);
+
+  /* ─────────────────────────────────────
+     TRANSITIONS
+  ───────────────────────────────────── */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* ─────────────────────────────────────
+     Z-INDEX SCALE
+  ───────────────────────────────────── */
+  --z-base: 1;
+  --z-card: 10;
+  --z-nav: 800;
+  --z-music-btn: 900;
+  --z-modal: 1000;
+  --z-intro: 2000;
+
+  /* ─────────────────────────────────────
+     SECTION BACKGROUNDS
+  ───────────────────────────────────── */
+  --bg-hero: var(--color-dark);
+  --bg-marquee: var(--color-gold-mist);
+  --bg-countdown: var(--color-dark-2);
+  --bg-story: var(--color-warm-white);
+  --bg-details: var(--color-dark-2);
+  --bg-timeline: var(--color-warm-white);
+  --bg-colours: var(--color-cream);
+  --bg-etiquette: var(--color-dark-2);
+  --bg-rsvp: var(--color-warm-white);
+  --bg-footer: var(--color-dark);
+
+  /* Admin dashboard */
+  --bg-admin-sidebar: var(--color-dark-2);
+  --bg-admin-body: var(--color-cream);
+  --bg-admin-card: var(--color-warm-white);
+  --bg-admin-table-row: var(--color-warm-white);
+  --bg-admin-table-alt: #f5f0e8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─────────────────────────────────────
+   BASE RESETS
+───────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    font-weight: var(--font-weight-light);
+    color: var(--color-text-primary);
+    line-height: 1.1;
+  }
+
+  p {
+    line-height: 1.7;
+    color: var(--color-text-body);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-family: var(--font-sans);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─────────────────────────────────────
+   CUSTOM UTILITIES
+───────────────────────────────────── */
+@layer utilities {
+  .gold-divider {
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-gold),
+      transparent
+    );
+  }
+}
+
+/* ─────────────────────────────────────
+   KEYFRAME ANIMATIONS
+   (defined here for Tailwind v4
+   — use as animate-[name] in JSX)
+───────────────────────────────────── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.6rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes scrollBob {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+/* ─────────────────────────────────────
+   TAILWIND v4 THEME EXTENSION
+   (replaces tailwind.config.ts for v4)
+───────────────────────────────────── */
+@theme {
+  --animate-fadeUp: fadeUp 1.1s forwards;
+  --animate-ringPulse: ringPulse 3.5s ease-out infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-blink: blink 0.75s step-end infinite;
+  --animate-scrollBob: scrollBob 2s ease-in-out infinite;
 }
