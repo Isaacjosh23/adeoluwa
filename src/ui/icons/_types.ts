@@ -3,7 +3,14 @@ export interface IconProps {
 }
 
 export const Icons = {
+  Church: "church",
+  Clock: "clock",
+  Date: "date",
+  Hall: "hall",
+  MapPin: "map-pin",
   Mute: "mute",
+  RightDiagonalArrow: "right-diagonal-arrow",
+  Shirt: "shirt",
   Unmute: "unmute",
 } as const;
 

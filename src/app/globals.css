@@ -192,15 +192,6 @@
    CUSTOM UTILITIES
 ───────────────────────────────────── */
 @layer utilities {
-  .section-label {
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    font-weight: var(--font-weight-medium);
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--color-gold);
-  }
-
   .gold-divider {
     width: 1px;
     background: linear-gradient(

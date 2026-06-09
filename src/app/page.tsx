@@ -6,6 +6,7 @@ import Marquee from "@/components/Marquee";
 import { HeroProvider, useHero } from "@/context/HeroContext";
 import Countdown from "@/components/Countdown";
 import OurStory from "@/components/our-story/OurStory";
+import EventDetails from "@/components/event-details/EventDetail";
 
 function HomeContent() {
   const { setMusicStarted, musicStarted } = useHero();
@@ -18,6 +19,7 @@ function HomeContent() {
       <Marquee />
       <Countdown />
       {/* <OurStory /> */}
+      <EventDetails />
     </>
   );
 }
