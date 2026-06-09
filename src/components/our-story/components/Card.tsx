@@ -31,6 +31,7 @@ function Card() {
             src={memory.image}
             alt={memory.caption}
             fill
+            sizes="(max-width: 640px) 85vw, 30rem"
             className="object-cover pointer-events-none"
             draggable={false}
           />
