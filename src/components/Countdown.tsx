@@ -44,7 +44,7 @@ export default function Countdown() {
       id="countdown"
       className="bg-(--bg-countdown) text-center py-24 sm:py-[8.8rem] px-8 sm:px-[2.4rem]"
     >
-      <p className="text-[1rem] md:text-[1.2rem] tracking-[0.32em] uppercase text-(--color-gold) mb-16 sm:mb-[5.2rem]">
+      <p className="text-[1rem] md:text-[1.2rem] font-medium tracking-[0.32em] uppercase text-(--color-gold) mb-16 sm:mb-[5.2rem]">
         Counting Down To Forever
       </p>
 
