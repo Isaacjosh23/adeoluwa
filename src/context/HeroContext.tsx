@@ -57,9 +57,9 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
   const toggleMute = () => {
     if (!audioRef.current) return;
     if (muted) {
-      audioRef.current.play().catch(() => {});
+      audioRef.current.volume = 0.3;
     } else {
-      audioRef.current.pause();
+      audioRef.current.volume = 0;
     }
     setMuted((prev) => !prev);
   };

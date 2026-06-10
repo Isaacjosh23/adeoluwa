@@ -3,6 +3,7 @@ import ChurchIcon from "./church";
 import ClockIcon from "./clock";
 import DateIcon from "./date";
 import HallIcon from "./hall";
+import IndexFingerUp from "./index-finger-up";
 import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
 import MuteIcon from "./mute";
@@ -30,6 +31,9 @@ export function Icon({ type, className }: Props) {
 
     case "hall":
       return <HallIcon {...props} />;
+
+    case "index-finger-up":
+      return <IndexFingerUp {...props} />;
 
     case "arrow-left":
       return <LeftArrowIcon {...props} />;

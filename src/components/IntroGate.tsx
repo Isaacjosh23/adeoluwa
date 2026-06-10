@@ -1,5 +1,6 @@
 "use client";
 
+import IndexFingerUp from "@/ui/icons/index-finger-up";
 import { useState } from "react";
 
 interface IntroGateProps {
@@ -61,6 +62,8 @@ export default function IntroGate({ onBegin }: IntroGateProps) {
         >
           Let Our Story Begin
         </button>
+
+        <IndexFingerUp className="size-10 sm:size-12 mt-[2.4rem] sm:mt-12 text-(--color-gold) opacity-0 animate-fadeUp [animation-delay:2.2s] [animation-fill-mode:forwards]" />
       </div>
     </div>
   );
