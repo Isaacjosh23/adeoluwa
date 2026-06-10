@@ -68,11 +68,9 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
       if (!audioRef.current || !musicStarted) return;
 
       if (document.hidden) {
-        // Page is hidden - pause the audio
         wasPlayingRef.current = !audioRef.current.paused;
         audioRef.current.pause();
       } else {
-        // Page is visible again - resume if it was playing
         if (wasPlayingRef.current && !muted) {
           audioRef.current.play().catch(() => {});
         }
@@ -89,7 +87,6 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
 
     if (isApple.current) {
       audioRef.current.muted = !audioRef.current.muted;
-      // On Apple devices, ensure audio resumes after being suspended
       if (!audioRef.current.muted) {
         audioRef.current.play().catch(() => {});
       }

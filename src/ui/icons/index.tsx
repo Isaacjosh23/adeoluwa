@@ -1,11 +1,13 @@
 import { IconProps, Icons } from "./_types";
 import ChurchIcon from "./church";
 import ClockIcon from "./clock";
+import CloseIcon from "./close";
 import DateIcon from "./date";
 import HallIcon from "./hall";
 import IndexFingerUp from "./index-finger-up";
 import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
+import MenuIcon from "./menu";
 import MuteIcon from "./mute";
 import RightArrowIcon from "./right-arrow";
 import RightDiagonalArrowIcon from "./right-diagonal-arrow";
@@ -26,6 +28,9 @@ export function Icon({ type, className }: Props) {
     case "clock":
       return <ClockIcon {...props} />;
 
+    case "close":
+      return <CloseIcon {...props} />;
+
     case "date":
       return <DateIcon {...props} />;
 
@@ -40,6 +45,9 @@ export function Icon({ type, className }: Props) {
 
     case "map-pin":
       return <MapPinIcon {...props} />;
+
+    case "menu":
+      return <MenuIcon {...props} />;
 
     case "mute":
       return <MuteIcon {...props} />;
