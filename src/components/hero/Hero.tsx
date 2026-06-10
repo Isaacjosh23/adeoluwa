@@ -26,11 +26,10 @@ export default function Hero() {
         <span className="text-[0.8rem] sm:text-[0.9rem] tracking-[0.28em] uppercase text-[rgba(250,247,242,0.3)]">
           Scroll
         </span>
-        {/* <div className="w-[0.1rem] h-12 sm:h-[3.8rem] bg-linear-to-b from-(--color-gold) to-transparent animate-scrollBob" /> */}
       </div>
 
       <audio ref={audioRef} loop>
-        <source src="" type="audio/mpeg" />
+        <source src="/audio/bg-music.mp3" type="audio/mpeg" />
       </audio>
 
       {musicStarted && <Music />}
