@@ -4,7 +4,7 @@ function MainContent() {
   const { typedText } = useHero();
 
   return (
-    <div className="relative z-2 text-center flex flex-col items-center pt-[8rem] pb-32 px-8 sm:pt-[8rem] sm:pb-40 sm:px-[2.4rem]">
+    <div className="relative z-2 text-center flex flex-col items-center pt-40 pb-32 px-8 sm:pt-48 sm:pb-40 sm:px-[2.4rem]">
       <p className="text-[1rem] md:text-[1.2rem] font-medium tracking-[0.3em] uppercase text-(--color-gold) mb-8 sm:mb-[2.8rem] opacity-0 animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:forwards]">
         We are getting married
       </p>

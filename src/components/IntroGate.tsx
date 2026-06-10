@@ -49,7 +49,7 @@ export default function IntroGate({ onBegin }: IntroGateProps) {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-[1.2rem] sm:gap-[1.6rem]">
         <p className="font-serif text-[clamp(4.8rem,12vw,9.6rem)] font-light italic text-(--color-gold) tracking-widest leading-none opacity-0 animate-fadeUp [animation-delay:0.5s] [animation-fill-mode:forwards]">
-          A ♡ E
+          A ♡ O
         </p>
 
         <p className="font-serif text-[clamp(1.4rem,3.5vw,2rem)] italic text-(--color-text-muted) tracking-[0.06em] opacity-0 animate-fadeUp [animation-delay:1s] [animation-fill-mode:forwards]">
