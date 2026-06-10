@@ -44,6 +44,7 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
   const [musicStarted, setMusicStarted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const isApple = useRef(isAppleDevice());
+  const wasPlayingRef = useRef(false);
 
   // ── SLIDE TIMER ──
   useEffect(() => {
@@ -61,11 +62,37 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
     }
   }, [musicStarted]);
 
+  // ── PAGE VISIBILITY HANDLER ──
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!audioRef.current || !musicStarted) return;
+
+      if (document.hidden) {
+        // Page is hidden - pause the audio
+        wasPlayingRef.current = !audioRef.current.paused;
+        audioRef.current.pause();
+      } else {
+        // Page is visible again - resume if it was playing
+        if (wasPlayingRef.current && !muted) {
+          audioRef.current.play().catch(() => {});
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, [musicStarted, muted]);
+
   const toggleMute = () => {
     if (!audioRef.current) return;
 
     if (isApple.current) {
       audioRef.current.muted = !audioRef.current.muted;
+      // On Apple devices, ensure audio resumes after being suspended
+      if (!audioRef.current.muted) {
+        audioRef.current.play().catch(() => {});
+      }
     } else {
       if (muted) {
         audioRef.current.volume = 0.3;
