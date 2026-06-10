@@ -3,7 +3,7 @@ import Swatches from "./components/Swatches";
 export default function ColoursOfTheDay() {
   return (
     <section
-      id="colours"
+      id="colors"
       className="bg-(--bg-colours) py-28 sm:py-36 px-8 sm:px-[4.8rem]"
     >
       <div className="max-w-480 mx-auto">
