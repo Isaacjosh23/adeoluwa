@@ -45,13 +45,14 @@ function NavBar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-(--color-dark)"
+      className="fixed top-0 left-0 right-0 z-795 transition-all duration-500 bg-(--color-dark)"
       id="home"
     >
       <div className="max-w-520 mx-auto px-[2.4rem] md:px-[4.8rem]">
         <div className="flex items-center justify-between h-28">
           <Link
             href="/"
+            onClick={() => setMenuOpen(false)}
             className="flex items-center justify-center leading-none group"
           >
             <p className="font-serif font-light italic text-(--color-gold) text-4xl tracking-widest leading-none">
@@ -97,6 +98,15 @@ function NavBar() {
           </button>
         </div>
       </div>
+
+      {menuOpen && (
+        <div
+          className="fixed inset-0 bg-dark-overlay md:hidden"
+          style={{ zIndex: 790, backdropFilter: "blur(2px)", top: "7rem" }}
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
 
       <MobileNav isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </nav>
