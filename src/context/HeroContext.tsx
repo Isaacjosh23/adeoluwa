@@ -31,12 +31,19 @@ interface HeroContextType {
 
 const HeroContext = createContext<HeroContextType | undefined>(undefined);
 
+const isAppleDevice = () => {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod|mac/.test(ua);
+};
+
 export function HeroProvider({ children }: { children: React.ReactNode }) {
   const [slideIdx, setSlideIdx] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [muted, setMuted] = useState(false);
   const [musicStarted, setMusicStarted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const isApple = useRef(isAppleDevice());
 
   // ── SLIDE TIMER ──
   useEffect(() => {
@@ -56,10 +63,15 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
 
   const toggleMute = () => {
     if (!audioRef.current) return;
-    if (muted) {
-      audioRef.current.volume = 0.3;
+
+    if (isApple.current) {
+      audioRef.current.muted = !audioRef.current.muted;
     } else {
-      audioRef.current.volume = 0;
+      if (muted) {
+        audioRef.current.volume = 0.3;
+      } else {
+        audioRef.current.volume = 0;
+      }
     }
     setMuted((prev) => !prev);
   };
