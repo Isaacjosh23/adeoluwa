@@ -7,6 +7,7 @@ export const Icons = {
   Clock: "clock",
   Date: "date",
   Hall: "hall",
+  IndexFingerUp: "index-finger-up",
   ArrowLeft: "arrow-left",
   MapPin: "map-pin",
   Mute: "mute",
