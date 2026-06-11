@@ -5,7 +5,7 @@
 /* ── ROOT TOKENS ── */
 :root {
   /* ─────────────────────────────────────
-     BRAND COLOURS
+     BRAND COLORS
   ───────────────────────────────────── */
 
   /* Primary — Gold */
@@ -115,7 +115,7 @@
   --bg-story: var(--color-warm-white);
   --bg-details: var(--color-dark-2);
   --bg-timeline: var(--color-warm-white);
-  --bg-colours: var(--color-cream);
+  --bg-colors: var(--color-cream);
   --bg-etiquette: var(--color-dark-2);
   --bg-rsvp: var(--color-warm-white);
   --bg-footer: var(--color-dark);

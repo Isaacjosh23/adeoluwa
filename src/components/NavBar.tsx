@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 import MobileNav from "./MobileNav";
 
 export const navLinks = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "/" },
   { label: "Our Story", href: "#story" },
   { label: "Event Details", href: "#details" },
-  { label: "Dress Colors", href: "#colors" },
+  { label: "Dress Code", href: "#colors" },
 ];
 
 function NavBar() {
@@ -60,12 +60,12 @@ function NavBar() {
             </p>
           </Link>
 
-          <div className="hidden md:flex items-center gap-[3.2rem]">
+          <div className="hidden md:flex items-center md:gap-10 lg:gap-[3.2rem]">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-[1.4rem] tracking-[0.08em] text-(--color-text-inverse) hover:text-(--color-gold) uppercase font-medium transition-colors duration-300 pb-[0.4rem]
+                className={`relative md:text-[1.2rem] lg:text-[1.4rem] tracking-[0.08em] text-(--color-text-inverse) hover:text-(--color-gold) uppercase font-medium transition-colors duration-300 pb-[0.4rem]
                   after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:bg-gold after:transition-all after:duration-300
                   ${
                     pathname === link.href
