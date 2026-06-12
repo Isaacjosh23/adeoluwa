@@ -1,4 +1,5 @@
 import { useHero } from "@/context/HeroContext";
+import Link from "next/link";
 
 function MainContent() {
   const { typedText } = useHero();
@@ -35,12 +36,12 @@ function MainContent() {
       </p>
 
       {/* CTA Button */}
-      <button
-        onClick={() => alert("Not functional yet")}
+      <Link
+        href="#rsvp"
         className="sm:hidden text-(--color-text-inverse) bg-(--color-gold) text-[1.2rem] px-[1.8rem] py-[0.8rem] rounded-lg font-medium cursor-pointer hover:bg-(--color-gold)/80 transition-colors duration-300 mt-6"
       >
         RSVP
-      </button>
+      </Link>
     </div>
   );
 }

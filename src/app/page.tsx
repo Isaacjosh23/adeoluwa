@@ -10,6 +10,7 @@ import EventDetails from "@/components/event-details/EventDetail";
 import ColorsOfTheDay from "@/components/colors-of-the-day/ColorsOfTheDay";
 import Timeline from "@/components/time-line";
 import Etiquette from "@/components/etiquette";
+import RSVP from "@/components/rsvp";
 
 function HomeContent() {
   const { setMusicStarted, musicStarted } = useHero();
@@ -24,6 +25,7 @@ function HomeContent() {
       <OurStory />
       <EventDetails />
       <ColorsOfTheDay />
+      <RSVP />
       <Timeline />
       <Etiquette />
     </>
