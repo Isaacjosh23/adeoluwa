@@ -19,7 +19,7 @@ function Swatches() {
       {SWATCHES.map((swatch, i) => (
         <div
           key={swatch.name}
-          className={`bg-(--bg-colours) flex flex-col gap-[2.4rem] p-[3.6rem] sm:p-[4.8rem] group
+          className={`bg-(--bg-colors) flex flex-col gap-[2.4rem] p-[3.6rem] sm:p-[4.8rem] group
             ${
               i !== SWATCHES.length - 1
                 ? "border-b-[0.5px] sm:border-b-0 sm:border-r-[0.5px] border-(--color-gold-dim)"

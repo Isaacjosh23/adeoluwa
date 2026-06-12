@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative max-h-screen flex items-center justify-center overflow-hidden"
     >
       <Slides />
 
@@ -21,12 +21,6 @@ export default function Hero() {
       <MainContent />
 
       <SlidesDot />
-
-      <div className="absolute bottom-[2.4rem] sm:bottom-[3.2rem] left-1/2 -translate-x-1/2 flex flex-col items-center gap-[0.8rem] sm:gap-4 z-2 opacity-0 animate-fadeUp [animation-delay:2.2s] [animation-fill-mode:forwards]">
-        <span className="text-[0.8rem] sm:text-[0.9rem] tracking-[0.28em] uppercase text-[rgba(250,247,242,0.3)]">
-          Scroll
-        </span>
-      </div>
 
       <audio ref={audioRef} loop>
         <source src="/audio/bg-music.mp3" type="audio/mpeg" />

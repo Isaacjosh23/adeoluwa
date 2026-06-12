@@ -3,6 +3,8 @@ export interface IconProps {
 }
 
 export const Icons = {
+  Asterik: "asterik",
+  Check: "check",
   Church: "church",
   Clock: "clock",
   Close: "close",
@@ -13,6 +15,7 @@ export const Icons = {
   MapPin: "map-pin",
   Menu: "menu",
   Mute: "mute",
+  RightAltArrow: "right-alt-arrow",
   ArrowRight: "arrow-right",
   RightDiagonalArrow: "right-diagonal-arrow",
   Shirt: "shirt",

@@ -5,7 +5,7 @@
 /* ── ROOT TOKENS ── */
 :root {
   /* ─────────────────────────────────────
-     BRAND COLOURS
+     BRAND COLORS
   ───────────────────────────────────── */
 
   /* Primary — Gold */
@@ -115,7 +115,7 @@
   --bg-story: var(--color-warm-white);
   --bg-details: var(--color-dark-2);
   --bg-timeline: var(--color-warm-white);
-  --bg-colours: var(--color-cream);
+  --bg-colors: var(--color-cream);
   --bg-etiquette: var(--color-dark-2);
   --bg-rsvp: var(--color-warm-white);
   --bg-footer: var(--color-dark);
@@ -266,6 +266,15 @@ nav {
   }
 }
 
+@keyframes toastBar {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 /* ─────────────────────────────────────
    TAILWIND v4 THEME EXTENSION
    (replaces tailwind.config.ts for v4)
@@ -276,4 +285,5 @@ nav {
   --animate-marquee: marquee 32s linear infinite;
   --animate-blink: blink 0.75s step-end infinite;
   --animate-scrollBob: scrollBob 2s ease-in-out infinite;
+  --animate-toastBar: toastBar 4.5s linear forwards;
 }
