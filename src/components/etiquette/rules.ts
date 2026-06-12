@@ -15,7 +15,7 @@ export const RULES = [
     number: "03",
     title: "Dress Accordingly",
     description:
-      "Please honour the colours of the day — Burgundy, Peach and Gold. We would love to see you dressed in the spirit of the celebration.",
+      "Please honour the colors of the day — Burgundy, Peach and Gold. We would love to see you dressed in the spirit of the celebration.",
   },
   {
     number: "04",

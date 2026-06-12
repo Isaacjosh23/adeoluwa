@@ -1,4 +1,6 @@
 import { IconProps, Icons } from "./_types";
+import AsterikIcon from "./asterik";
+import CheckIcon from "./check";
 import ChurchIcon from "./church";
 import ClockIcon from "./clock";
 import CloseIcon from "./close";
@@ -9,6 +11,7 @@ import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
 import MenuIcon from "./menu";
 import MuteIcon from "./mute";
+import RightAltArrowIcon from "./right-alt-arrow";
 import RightArrowIcon from "./right-arrow";
 import RightDiagonalArrowIcon from "./right-diagonal-arrow";
 import ShirtIcon from "./shirt";
@@ -22,6 +25,12 @@ export function Icon({ type, className }: Props) {
   const props = { className };
 
   switch (type) {
+    case "asterik":
+      return <AsterikIcon {...props} />;
+
+    case "check":
+      return <CheckIcon {...props} />;
+
     case "church":
       return <ChurchIcon {...props} />;
 
@@ -51,6 +60,9 @@ export function Icon({ type, className }: Props) {
 
     case "mute":
       return <MuteIcon {...props} />;
+
+    case "right-alt-arrow":
+      return <RightAltArrowIcon {...props} />;
 
     case "arrow-right":
       return <RightArrowIcon {...props} />;

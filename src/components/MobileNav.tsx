@@ -29,12 +29,13 @@ function MobileNav({ isOpen, onClose }: MobileNavProps) {
           </Link>
         ))}
 
-        <button
-          onClick={() => alert("Not functional yet")}
-          className="text-(--color-text-inverse) bg-(--color-gold) text-[1.4rem] px-8 py-4 rounded-lg font-medium cursor-pointer hover:bg-(--color-gold)/80 transition-colors duration-300"
+        <Link
+          href="#rsvp"
+          onClick={onClose}
+          className="text-(--color-text-inverse) bg-(--color-gold) text-[1.4rem] px-8 py-4 rounded-lg font-medium cursor-pointer hover:bg-(--color-gold)/80 transition-colors duration-300 text-center"
         >
           RSVP
-        </button>
+        </Link>
       </div>
     </div>
   );

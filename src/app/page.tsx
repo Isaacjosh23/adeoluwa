@@ -7,9 +7,10 @@ import { HeroProvider, useHero } from "@/context/HeroContext";
 import Countdown from "@/components/Countdown";
 import OurStory from "@/components/our-story/OurStory";
 import EventDetails from "@/components/event-details/EventDetail";
-import ColoursOfTheDay from "@/components/colors-of-the-day/ColorsOfTheDay";
+import ColorsOfTheDay from "@/components/colors-of-the-day/ColorsOfTheDay";
 import Timeline from "@/components/time-line";
 import Etiquette from "@/components/etiquette";
+import RSVP from "@/components/rsvp";
 
 function HomeContent() {
   const { setMusicStarted, musicStarted } = useHero();
@@ -23,7 +24,8 @@ function HomeContent() {
       <Countdown />
       <OurStory />
       <EventDetails />
-      <ColoursOfTheDay />
+      <ColorsOfTheDay />
+      <RSVP />
       <Timeline />
       <Etiquette />
     </>
