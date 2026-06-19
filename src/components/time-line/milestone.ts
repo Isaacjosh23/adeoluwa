@@ -1,30 +1,23 @@
 export const MILESTONES = [
   {
-    year: "2019",
     event: "First Meeting",
     description:
-      "Two strangers in the same room. Neither knew that moment would change everything.",
+      'We first met at night while we were going back from a service that had closed in the evening. But Oluwaseun doesn\'t remember the meeting. The second time we met for the "first", time, it was during the day, our unit in church was doing a meeting and we were playing some interesting games and had to compete against each each other.',
   },
+
   {
-    year: "2020",
     event: "Becoming Friends",
     description:
-      "Late night conversations, shared laughs, and a friendship that quietly turned into something more.",
+      "Our friendship journey started with a text. In a meeting, the anchor asked us to reach out to her because she was under the weather and that's how we started texting. Just an innocent check up 😂",
   },
+
   {
-    year: "2021",
     event: "He Finally Said the Words",
     description:
-      "It took courage, the right moment, and a heart full of certainty. She said yes before he finished.",
+      "After months of texting and growing friendship, he asked the question but even though I couldn't say yes fast enough, I had to do small shakara first and took some time 😙.",
   },
+
   {
-    year: "2023",
-    event: "Traditional Engagement",
-    description:
-      "Two families, one afternoon, and a lifetime of joy sealed with tradition and celebration.",
-  },
-  {
-    year: "2026",
     event: "Forever Begins ✦",
     description:
       "August 15th. Ilorin. The rest of their lives starts today — and you are here for it.",
