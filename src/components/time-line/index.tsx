@@ -24,7 +24,7 @@ export default function Timeline() {
 
             return (
               <div
-                key={milestone.year}
+                key={milestone.event}
                 className={`relative flex items-start sm:items-center gap-[2.4rem] sm:gap-0 mb-[4.8rem] sm:mb-[6.4rem] last:mb-0
                   ${isEven ? "sm:flex-row" : "sm:flex-row-reverse"}
                 `}
@@ -34,9 +34,6 @@ export default function Timeline() {
                     ${isEven ? "sm:pr-[6.4rem] sm:text-right" : "sm:pl-[6.4rem] sm:text-left"}
                   `}
                 >
-                  <p className="text-[1rem] sm:text-[1.2rem] tracking-[0.22em] uppercase text-(--color-gold) font-medium mb-[0.8rem]">
-                    {milestone.year}
-                  </p>
                   <h3 className="font-serif text-[2.2rem] sm:text-[2.8rem] font-light text-(--color-text-primary) leading-[1.2] mb-[0.8rem]">
                     {milestone.event}
                   </h3>
