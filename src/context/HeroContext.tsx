@@ -1,5 +1,6 @@
 "use client";
 
+import { HERO_SLIDES } from "@/lib/hero-slides";
 import React, {
   createContext,
   useContext,
@@ -7,8 +8,6 @@ import React, {
   useRef,
   useState,
 } from "react";
-
-const SLIDES = [{ bg: "#1a1208" }, { bg: "#0e1a10" }, { bg: "#100e1a" }];
 
 const PHRASES = [
   "It began with a conversation...",
@@ -49,7 +48,7 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
   // ── SLIDE TIMER ──
   useEffect(() => {
     const timer = setInterval(() => {
-      setSlideIdx((prev) => (prev + 1) % SLIDES.length);
+      setSlideIdx((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 5500);
     return () => clearInterval(timer);
   }, []);

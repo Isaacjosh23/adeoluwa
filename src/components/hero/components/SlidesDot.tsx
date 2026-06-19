@@ -1,12 +1,12 @@
 import { useHero } from "@/context/HeroContext";
-import { SLIDES } from "./Slides";
+import { HERO_SLIDES } from "@/lib/hero-slides";
 
 function SlidesDot() {
   const { slideIdx, setSlideIdx } = useHero();
 
   return (
     <div className="absolute bottom-12 sm:bottom-10 left-1/2 -translate-x-1/2 flex gap-[0.8rem] z-2">
-      {SLIDES.map((_, i) => (
+      {HERO_SLIDES.map((_, i) => (
         <button
           key={i}
           onClick={() => setSlideIdx(i)}

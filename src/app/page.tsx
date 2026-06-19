@@ -11,6 +11,7 @@ import ColorsOfTheDay from "@/components/colors-of-the-day/ColorsOfTheDay";
 import Timeline from "@/components/time-line";
 import Etiquette from "@/components/etiquette";
 import RSVP from "@/components/rsvp";
+import Footer from "@/components/Footer";
 
 function HomeContent() {
   const { setMusicStarted, musicStarted } = useHero();
@@ -28,6 +29,7 @@ function HomeContent() {
       <RSVP />
       <Timeline />
       <Etiquette />
+      <Footer />
     </>
   );
 }

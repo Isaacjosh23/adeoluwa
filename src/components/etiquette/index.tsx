@@ -7,7 +7,6 @@ export default function Etiquette() {
       className="bg-(--bg-etiquette) py-28 sm:py-36 px-8 sm:px-[4.8rem]"
     >
       <div className="max-w-480 mx-auto">
-        {/* Header */}
         <div className="mb-16 sm:mb-[5.6rem]">
           <p className="text-[1rem] md:text-[1.2rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
             House Rules

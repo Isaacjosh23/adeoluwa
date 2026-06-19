@@ -36,9 +36,6 @@ function Card() {
             draggable={false}
           />
           <div className="absolute bottom-0 left-0 right-0 px-8 pt-[3.6rem] pb-8 bg-linear-to-t from-[rgba(14,12,11,0.88)] to-transparent">
-            <p className="text-[0.9rem] tracking-[0.2em] uppercase text-(--color-gold) mb-[0.4rem] font-sans">
-              {memory.date}
-            </p>
             <p className="font-serif italic text-[1.5rem] sm:text-[1.6rem] text-[rgba(250,247,242,0.9)] leading-[1.4]">
               {memory.caption}
             </p>
