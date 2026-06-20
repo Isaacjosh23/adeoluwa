@@ -38,7 +38,7 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
             name="firstName"
             type="text"
             required
-            placeholder="Ngozi"
+            placeholder="John"
             value={form.firstName}
             onChange={onChange}
             className={inputClass}
@@ -53,7 +53,7 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
             name="lastName"
             type="text"
             required
-            placeholder="Okafor"
+            placeholder="Doe"
             value={form.lastName}
             onChange={onChange}
             className={inputClass}
@@ -71,7 +71,7 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
           name="email"
           type="email"
           required
-          placeholder="you@example.com"
+          placeholder="johndoe@example.com"
           value={form.email}
           onChange={onChange}
           className={inputClass}
@@ -79,73 +79,48 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
       </div>
 
       {/* Phone */}
-      <div>
-        <label className={labelClass} htmlFor="phone">
-          Phone Number
-        </label>
-        <input
-          id="phone"
-          name="phone"
-          type="tel"
-          placeholder="08012345678"
-          value={form.phone}
-          onChange={onChange}
-          className={inputClass}
-        />
-      </div>
-
-      {/* Guest count + Attending row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 sm:gap-[4.8rem]">
         <div>
-          <label className={labelClass} htmlFor="guestCount">
-            Number of Guests
+          <label className={labelClass} htmlFor="phone">
+            Phone Number
           </label>
-          <select
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="08012345678"
+            value={form.phone}
+            onChange={onChange}
+            className={inputClass}
+          />
+        </div>
+
+        {/* Guest count */}
+        <div>
+          <label className={labelClass} htmlFor="guestCount">
+            Number of Guests *
+          </label>
+          <input
             id="guestCount"
             name="guestCount"
+            type="text"
+            required
+            placeholder="2"
             value={form.guestCount}
             onChange={onChange}
-            className={`${inputClass} cursor-pointer appearance-none`}
-          >
-            <option value="" disabled>
-              Select
-            </option>
-            <option value="1">Just me</option>
-            <option value="2">2 guests</option>
-            <option value="3">3 guests</option>
-            <option value="4">4 guests</option>
-          </select>
-        </div>
-        <div>
-          <label className={labelClass} htmlFor="attending">
-            Attending *
-          </label>
-          <select
-            id="attending"
-            name="attending"
-            required
-            value={form.attending}
-            onChange={onChange}
-            className={`${inputClass} cursor-pointer appearance-none`}
-          >
-            <option value="" disabled>
-              Select
-            </option>
-            <option value="both">Ceremony & Reception</option>
-            <option value="reception">Reception only</option>
-            <option value="ceremony">Ceremony only</option>
-            <option value="no">Unable to attend</option>
-          </select>
+            onInput={(e) => {
+              const target = e.target as HTMLInputElement;
+              target.value = target.value.replace(/[^0-9]/g, "");
+            }}
+            className={inputClass}
+          />
         </div>
       </div>
 
       {/* Message */}
       <div>
         <label className={labelClass} htmlFor="message">
-          Message to the Couple{" "}
-          <span className="normal-case tracking-normal text-(--color-text-muted)">
-            (optional)
-          </span>
+          Message to the Couple
         </label>
         <textarea
           id="message"

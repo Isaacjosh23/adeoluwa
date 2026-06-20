@@ -10,7 +10,6 @@ export interface FormData {
   email: string;
   phone: string;
   guestCount: string;
-  attending: string;
   message: string;
 }
 
@@ -20,7 +19,6 @@ const INITIAL_FORM: FormData = {
   email: "",
   phone: "",
   guestCount: "",
-  attending: "",
   message: "",
 };
 
@@ -41,16 +39,42 @@ export default function RSVP() {
     e.preventDefault();
     setLoading(true);
 
-    // ── Simulate submission for now ──
-    // Replace with real Supabase call in Phase 2
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    try {
+      const response = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: form.firstName,
+          lastName: form.lastName,
+          email: form.email,
+          phone: form.phone || undefined,
+          guestCount: form.guestCount,
+          message: form.message || undefined,
+        }),
+      });
 
-    setLoading(false);
-    setForm(INITIAL_FORM);
-    setToastVisible(true);
+      const data = await response.json();
 
-    // Auto-dismiss after 4.5s
-    setTimeout(() => setToastVisible(false), 4500);
+      if (!response.ok) {
+        console.error("RSVP submission error:", data);
+        alert(`Error: ${data.error || "Failed to submit RSVP"}`);
+        setLoading(false);
+        return;
+      }
+
+      setLoading(false);
+      setForm(INITIAL_FORM);
+      setToastVisible(true);
+
+      // Auto-dismiss after 4.5s
+      setTimeout(() => setToastVisible(false), 4500);
+    } catch (error) {
+      console.error("RSVP submission error:", error);
+      alert("Failed to submit RSVP. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
