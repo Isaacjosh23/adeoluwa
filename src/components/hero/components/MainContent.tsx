@@ -6,7 +6,7 @@ function MainContent() {
 
   return (
     <div className="relative z-2 text-center flex flex-col items-center pt-48 pb-32 px-8 sm:pt-60 sm:pb-32 sm:px-[2.4rem]">
-      <p className="text-[1rem] md:text-[1.2rem] font-medium tracking-[0.3em] uppercase text-(--color-gold) mb-8 sm:mb-[2.4rem] opacity-0 animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:forwards]">
+      <p className="text-[1rem] md:text-[1.2rem] font-medium tracking-[0.3em] uppercase text-(--color-text-inverse) mb-8 sm:mb-[2.4rem] opacity-0 animate-fadeUp [animation-delay:0.3s] [animation-fill-mode:forwards]">
         We are getting married
       </p>
 

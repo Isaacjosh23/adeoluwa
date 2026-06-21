@@ -1,57 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import Toast from "./components/Toast";
 import RsvpForm from "./components/RsvpForm";
-
-export interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  guestCount: string;
-  attending: string;
-  message: string;
-}
-
-const INITIAL_FORM: FormData = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  guestCount: "",
-  attending: "",
-  message: "",
-};
+import { useRsvp } from "@/hooks/useRsvp";
 
 export default function RSVP() {
-  const [form, setForm] = useState<FormData>(INITIAL_FORM);
-  const [loading, setLoading] = useState(false);
-  const [toastVisible, setToastVisible] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
-  ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // ── Simulate submission for now ──
-    // Replace with real Supabase call in Phase 2
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-
-    setLoading(false);
-    setForm(INITIAL_FORM);
-    setToastVisible(true);
-
-    // Auto-dismiss after 4.5s
-    setTimeout(() => setToastVisible(false), 4500);
-  };
+  const {
+    toastVisible,
+    setToastVisible,
+    form,
+    loading,
+    handleChange,
+    handleSubmit,
+  } = useRsvp();
 
   return (
     <>

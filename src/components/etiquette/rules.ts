@@ -8,9 +8,9 @@ export const RULES = [
 
   {
     number: "02",
-    title: "Arrive on Time",
+    title: "Arrive On Time",
     description:
-      "The ceremony begins at 10:00 AM sharp. Late entry will not be possible after doors close. Please plan your journey accordingly.",
+      "The ceremony begins at 10:00 AM, and we would like that you experience the whole thing, so we would appreciate your early arrival.",
   },
 
   {
@@ -31,13 +31,6 @@ export const RULES = [
     number: "05",
     title: "Gifting",
     description:
-      "Your presence is the greatest gift. If you would like to honour the couple, account details for contributions are available on request.",
-  },
-
-  {
-    number: "06",
-    title: "Children Policy",
-    description:
-      "We love your little ones, however this is an adults-only reception. We kindly ask that you make arrangements for childcare on the day.",
+      "Your presence is the greatest gift. We'd be honored to have you with us as we tie the knot. If you would like to also give material gifts to the couple, you can look through the gift registry",
   },
 ];
