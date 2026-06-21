@@ -70,20 +70,18 @@ export async function GET(
   }
 }
 
-// 2. UPDATE PATCH ROUTE: Change type to Promise and add await
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: Promise<{ token: string }> }, // <-- Type changed to Promise
+  { params }: { params: Promise<{ token: string }> },
 ) {
   try {
-    const { token } = await params; // <-- Await the params here
+    const { token } = await params;
     const body = await req.json();
 
     if (!token) {
       return NextResponse.json({ error: "Token is required" }, { status: 400 });
     }
 
-    // Check if deadline has passed
     const now = new Date();
     const deadline = new Date("2026-07-31T23:59:59Z");
     if (now > deadline) {
@@ -93,7 +91,6 @@ export async function PATCH(
       );
     }
 
-    // Fetch existing RSVP
     const { data: existingRsvp, error: fetchError } = await supabase
       .from("rsvps")
       .select("*")
@@ -104,7 +101,6 @@ export async function PATCH(
       return NextResponse.json({ error: "RSVP not found" }, { status: 404 });
     }
 
-    // Handle cancellation
     if (body.action === "cancel") {
       const { error: updateError } = await supabase
         .from("rsvps")
@@ -119,20 +115,19 @@ export async function PATCH(
         );
       }
 
-      // Send cancellation email
       try {
         await resend.emails.send({
           from: "Adedamola & Oluwaseun <onboarding@resend.dev>",
           to: existingRsvp.email,
-          subject: "RSVP Cancelled - Ada & Emmanuel",
+          subject: "RSVP Cancelled - Adedamola & Oluwaseun",
           html: `
             <div style="font-family: serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
-              <h2 style="text-align: center; color: #d4af37;">RSVP Cancelled</h2>
+              <h2 style="text-align: center; color: #d4af37; font-family: Georgia, 'Times New Roman', serif; font-weight: normal; font-size: 28px; letter-spacing: 0.02em;">RSVP Cancelled</h2>
               <p>Hi ${existingRsvp.first_name},</p>
               <p>Your RSVP has been successfully cancelled.</p>
               <p>If you change your mind, you can RSVP again by visiting our website.</p>
               <p style="text-align: center; margin-top: 40px; color: #d4af37; font-style: italic;">
-                #AdaAndEmma2026
+                #AdeOluwa26
               </p>
             </div>
           `,
@@ -150,7 +145,6 @@ export async function PATCH(
       );
     }
 
-    // Handle update
     if (
       !body.firstName ||
       !body.lastName ||
@@ -163,6 +157,14 @@ export async function PATCH(
       );
     }
 
+    const guestCountNum = parseInt(body.guestCount, 10);
+    if (isNaN(guestCountNum) || guestCountNum < 1) {
+      return NextResponse.json(
+        { error: "Guest count must be a valid number" },
+        { status: 400 },
+      );
+    }
+
     const { error: updateError } = await supabase
       .from("rsvps")
       .update({
@@ -170,7 +172,7 @@ export async function PATCH(
         last_name: body.lastName,
         email: body.email,
         phone: body.phone || null,
-        guest_count: parseInt(body.guestCount),
+        guest_count: guestCountNum,
         message: body.message || null,
       })
       .eq("edit_token", token);
@@ -183,7 +185,14 @@ export async function PATCH(
       );
     }
 
-    // Send updated confirmation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(body.email)) {
+      return NextResponse.json(
+        { error: "Invalid email address" },
+        { status: 400 },
+      );
+    }
+
     try {
       const baseUrl =
         process.env.NEXT_PUBLIC_APP_URL || "https://adeoluwa@26.vercel.app";
@@ -200,7 +209,7 @@ export async function PATCH(
       await resend.emails.send({
         from: "Adedamola & Oluwaseun <onboarding@resend.dev>",
         to: body.email,
-        subject: "Your Updated RSVP - Ada & Emmanuel",
+        subject: "Your Updated RSVP - Adedamola & Oluwaseun",
         html: emailHtml,
       });
     } catch (emailError) {

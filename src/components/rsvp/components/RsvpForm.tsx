@@ -1,5 +1,5 @@
 import RightAltArrowIcon from "@/ui/icons/right-alt-arrow";
-import { FormData } from "..";
+import { FormData } from "@/hooks/useRsvp";
 import type { ChangeEvent, FormEvent } from "react";
 
 interface RsvpFormProps {

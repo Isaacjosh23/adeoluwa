@@ -8,7 +8,7 @@ export const RULES = [
 
   {
     number: "02",
-    title: "Late Entry Will Not Be Possible, Plan Your Journey accordingly",
+    title: "Arrive On Time",
     description:
       "The ceremony begins at 10:00 AM, and we would like that you experience the whole thing, so we would appreciate your early arrival.",
   },

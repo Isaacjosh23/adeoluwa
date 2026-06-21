@@ -23,7 +23,6 @@ export async function POST(req: NextRequest) {
   try {
     const body: RsvpPayload = await req.json();
 
-    // Validate required fields
     if (!body.firstName || !body.lastName || !body.email || !body.guestCount) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -31,7 +30,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(body.email)) {
       return NextResponse.json(
@@ -40,7 +38,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if RSVP deadline has passed
     const now = new Date();
     const deadline = new Date("2026-07-31T23:59:59Z");
     if (now > deadline) {
@@ -50,20 +47,31 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Insert into Supabase (triggers will handle guest_id and edit_token)
-    const { data, error } = await supabase.from("rsvps").insert([
-      {
-        first_name: body.firstName,
-        last_name: body.lastName,
-        email: body.email,
-        phone: body.phone || null,
-        guest_count: parseInt(body.guestCount),
-        attending: "reception", // Default value as per requirement
-        message: body.message || null,
-      },
-    ]);
+    const guestCountNum = parseInt(body.guestCount, 10);
+    if (isNaN(guestCountNum) || guestCountNum < 1) {
+      return NextResponse.json(
+        { error: "Guest count must be a valid number" },
+        { status: 400 },
+      );
+    }
 
-    if (error) {
+    const { data: rsvpData, error } = await supabase
+      .from("rsvps")
+      .insert([
+        {
+          first_name: body.firstName,
+          last_name: body.lastName,
+          email: body.email,
+          phone: body.phone || null,
+          guest_count: guestCountNum,
+          attending: "reception",
+          message: body.message || null,
+        },
+      ])
+      .select("id, guest_id, edit_token")
+      .single();
+
+    if (error || !rsvpData) {
       console.error("Supabase insert error:", error);
       return NextResponse.json(
         { error: "Failed to submit RSVP" },
@@ -71,29 +79,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Get the inserted record to retrieve edit_token
-    const { data: rsvpData, error: fetchError } = await supabase
-      .from("rsvps")
-      .select("id, guest_id, edit_token")
-      .eq("email", body.email)
-      .order("submitted_at", { ascending: false })
-      .limit(1)
-      .single();
-
-    if (fetchError) {
-      console.error("Error fetching RSVP:", fetchError);
-      return NextResponse.json(
-        { error: "Failed to retrieve RSVP details" },
-        { status: 500 },
-      );
-    }
-
-    // Generate edit link
     const baseUrl =
-      process.env.NEXT_PUBLIC_APP_URL || "https://adeoluwa@26.vercel.app";
+      process.env.NEXT_PUBLIC_APP_URL || "https://adeoluwa26.vercel.app";
     const editLink = `${baseUrl}/rsvp/edit/${rsvpData.edit_token}`;
 
-    // Send confirmation email via Resend
     try {
       const emailHtml = generateRsvpConfirmationEmail({
         firstName: body.firstName,
@@ -106,12 +95,11 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: "Adedamola & Oluwaseun <onboarding@resend.dev>",
         to: body.email,
-        subject: "Your RSVP Confirmation - Ada & Emmanuel",
+        subject: "Your RSVP Confirmation - Adedamola & Oluwaseun",
         html: emailHtml,
       });
     } catch (emailError) {
       console.error("Resend email error:", emailError);
-      // Don't fail the RSVP submission if email fails
     }
 
     return NextResponse.json(

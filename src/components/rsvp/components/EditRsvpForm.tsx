@@ -136,10 +136,7 @@ export default function EditRsvpForm(props: EditRsvpFormProps) {
         {/* Message */}
         <div>
           <label className={labelClass} htmlFor="message">
-            Message to the Couple{" "}
-            <span className="normal-case tracking-normal text-(--color-text-muted)">
-              (optional)
-            </span>
+            Message to the Couple
           </label>
           <textarea
             id="message"
