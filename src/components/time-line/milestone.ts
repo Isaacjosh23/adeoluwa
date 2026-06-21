@@ -2,7 +2,7 @@ export const MILESTONES = [
   {
     event: "First Meeting",
     description:
-      'We first met at night while we were going back from a service that had closed in the evening. But Oluwaseun doesn\'t remember the meeting. The second time we met for the "first", time, it was during the day, our unit in church was doing a meeting and we were playing some interesting games and had to compete against each each other.',
+      'We first met at night while we were going back from a service that had closed in the evening. But Oluwaseun doesn\'t remember the meeting. The second time we met for the "first", time, it was during the day, our unit in church was doing a meeting and we were playing some interesting games and had to compete against each other.',
   },
 
   {

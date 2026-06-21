@@ -38,7 +38,7 @@ export const DETAILS: DetailCard[] = [
     icon: <HallIcon className="size-10 sm:size-12 text-(--color-gold)" />,
     label: "Reception",
     venue: "Diamond Arena",
-    time: "2:00 PM",
+    time: "1:00 PM",
     timeIcon: <ClockIcon className="size-10 text-(--color-gold)" />,
     date: "Saturday, 15th August 2026",
     dateIcon: <DateIcon className="size-10 text-(--color-gold)" />,
