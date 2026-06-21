@@ -157,10 +157,10 @@ export default function EditRsvpForm(props: EditRsvpFormProps) {
             {loading ? (
               <p>Saving...</p>
             ) : (
-              <p>
+              <p className="flex items-center gap-2">
                 Save Changes{" "}
                 <span>
-                  <RightAltArrowIcon className="text-[1rem] inline-block" />
+                  <RightAltArrowIcon className="text-[2rem] inline-block" />
                 </span>
               </p>
             )}
