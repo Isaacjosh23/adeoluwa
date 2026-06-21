@@ -18,7 +18,7 @@ export default function EditRsvpPage() {
 
   if (loading) {
     return (
-      <section className="bg-(--bg-rsvp) py-28 sm:py-36 px-8 sm:px-[4.8rem] min-h-screen">
+      <section className="bg-(--bg-rsvp) py-36 px-8 sm:px-[4.8rem] min-h-screen">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-(--color-gold) font-serif text-[1.5rem]">
             Loading your RSVP...
@@ -30,7 +30,7 @@ export default function EditRsvpPage() {
 
   if (error) {
     return (
-      <section className="bg-(--bg-rsvp) py-28 sm:py-36 px-8 sm:px-[4.8rem] min-h-screen">
+      <section className="bg-(--bg-rsvp) py-36 px-8 sm:px-[4.8rem] min-h-screen">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-[1rem] md:text-[1.2rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
@@ -56,7 +56,7 @@ export default function EditRsvpPage() {
 
   if (success) {
     return (
-      <section className="bg-(--bg-rsvp) py-28 sm:py-36 px-8 sm:px-[4.8rem] min-h-screen">
+      <section className="bg-(--bg-rsvp) py-36 px-8 sm:px-[4.8rem] min-h-screen">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
             <p className="text-[1rem] md:text-[1.2rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
@@ -79,7 +79,7 @@ export default function EditRsvpPage() {
 
   if (!rsvpData) {
     return (
-      <section className="bg-(--bg-rsvp) py-28 sm:py-36 px-8 sm:px-[4.8rem] min-h-screen">
+      <section className="bg-(--bg-rsvp) py-36 px-8 sm:px-[4.8rem] min-h-screen">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-(--color-gold) font-serif text-[1.5rem]">
             No RSVP data found
@@ -90,7 +90,7 @@ export default function EditRsvpPage() {
   }
 
   return (
-    <section className="bg-(--bg-rsvp) py-28 sm:py-36 px-8 sm:px-[4.8rem]">
+    <section className="bg-(--bg-rsvp) py-36 px-8 sm:px-[4.8rem]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16 sm:mb-[5.6rem]">

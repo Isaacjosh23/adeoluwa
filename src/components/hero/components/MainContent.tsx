@@ -12,7 +12,7 @@ function MainContent() {
 
       <h1 className="font-serif text-[clamp(5rem,7vw,9rem)] font-light leading-none tracking-tight text-(--color-text-inverse) opacity-0 animate-fadeUp [animation-delay:0.6s] [animation-fill-mode:forwards]">
         <em className="italic text-(--color-gold)">Adedamola</em>
-        <span className="block font-serif italic text-[clamp(2rem,4vw,4rem)] text-(--color-text-inverse-muted) my-[0.6rem] sm:my-[0.8rem]">
+        <span className="block font-serif italic text-[clamp(2rem,4vw,4rem)] text-(--color-text-inverse) my-[0.6rem] sm:my-[0.8rem]">
           &
         </span>
         Oluwaseun
@@ -27,7 +27,7 @@ function MainContent() {
         <span className="inline-block w-[0.15rem] h-[0.9em] bg-(--color-gold) ml-[0.2rem] align-middle animate-blink" />
       </div>
 
-      <p className="mt-8 sm:mt-[2.4rem] text-[1rem] md:text-[1.2rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-[rgba(250,247,242,0.38)] opacity-0 animate-fadeUp [animation-delay:1.3s] [animation-fill-mode:forwards] px-4">
+      <p className="mt-8 sm:mt-[2.4rem] text-[1rem] md:text-[1.2rem] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-(--color-text-inverse) opacity-0 animate-fadeUp [animation-delay:1.3s] [animation-fill-mode:forwards] px-4">
         Saturday · 15th August 2026
       </p>
 

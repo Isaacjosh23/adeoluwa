@@ -143,10 +143,10 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
           {loading ? (
             <p>Sending...</p>
           ) : (
-            <p>
+            <p className="flex items-center gap-2">
               Confirm My Attendance{" "}
               <span>
-                <RightAltArrowIcon className="text-[1rem] inline-block" />
+                <RightAltArrowIcon className="text-[2rem] inline-block" />
               </span>
             </p>
           )}
