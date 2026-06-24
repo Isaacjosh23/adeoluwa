@@ -32,45 +32,31 @@ export const MEMORIES: MemoryCard[] = [
 
   {
     id: 6,
-    image: "/images/adeoluwa-6.jpg",
+    image: "/images/adeoluwa-23.jpg",
     caption: "Conversations got more interesting",
   },
 
   {
-    id: 12,
-    image: "/images/adeoluwa-12.jpg",
-    caption: "He finally said the words",
-  },
-
-  {
     id: 8,
-    image: "/images/adeoluwa-8.jpg",
+    image: "/images/adeoluwa-22.jpg",
     caption: "We became more than friends",
   },
 
   {
-    id: 19,
-    image: "/images/adeoluwa-19.jpg",
-    caption: "And now, forever is about to begin.",
-  },
-
-  // Rest to edit
-
-  {
-    id: 20,
+    id: 12,
     image: "/images/adeoluwa-20.jpg",
     caption: "He finally said the words",
   },
 
   {
-    id: 11,
-    image: "/images/adeoluwa-11.jpg",
-    caption: "And now, forever begins",
+    id: 19,
+    image: "/images/adeoluwa-14.jpg",
+    caption: "And now, forever is about to begin.",
   },
 
   {
     id: 14,
-    image: "/images/adeoluwa-14.jpg",
-    caption: "And now, forever begins",
+    image: "/images/adeoluwa-19.jpg",
+    caption: "Forever begins",
   },
 ];

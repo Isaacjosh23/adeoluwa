@@ -1,3 +1,4 @@
+import path from "path";
 import ReactPDF, {
   Document,
   Page,
@@ -6,8 +7,6 @@ import ReactPDF, {
   StyleSheet,
   Font,
 } from "@react-pdf/renderer";
-
-import path from "path";
 
 const fontsDir = path.join(process.cwd(), "public", "fonts");
 
@@ -207,7 +206,14 @@ interface GuestData {
 }
 
 function EventPass({ guest }: { guest: GuestData }) {
-  const attendingLabel = guest.attending === "reception" ? "Reception" : "";
+  const attendingLabel =
+    guest.attending === "both"
+      ? "Ceremony & Reception"
+      : guest.attending === "reception"
+        ? "Reception"
+        : guest.attending === "ceremony"
+          ? "Ceremony Only"
+          : "Reception";
 
   return (
     <Document>

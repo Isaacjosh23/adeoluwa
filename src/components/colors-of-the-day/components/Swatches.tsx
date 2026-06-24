@@ -1,15 +1,15 @@
 const SWATCHES = [
   {
     name: "Burgundy",
-    hex: "#510D18",
+    hex: "#4A1519",
   },
   {
     name: "Peach",
-    hex: "#F38751",
+    hex: "#E8A29A",
   },
   {
     name: "Gold",
-    hex: "#DAB38F",
+    hex: "#C4913A",
   },
 ];
 
@@ -31,7 +31,7 @@ function Swatches() {
             style={{ backgroundColor: swatch.hex }}
           />
           <div className="flex items-center justify-center">
-            <p className="font-serif text-[2rem] sm:text-[2.2rem] font-light text-(--color-text-primary)">
+            <p className="font-serif text-[2rem] sm:text-[2.2rem] font-normal text-(--color-text-primary)">
               {swatch.name}
             </p>
           </div>

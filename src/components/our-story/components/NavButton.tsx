@@ -16,7 +16,7 @@ function NavButton() {
       >
         <LeftArrowIcon className="size-8 sm:size-10" />
       </button>
-      <span className="font-serif italic text-[1.3rem] sm:text-[1.4rem] text-(--color-text-muted)">
+      <span className="font-serif italic text-[1.5rem] sm:text-[1.7rem] text-(--color-text-muted) font-medium">
         {current + 1} / {MEMORIES.length}
       </span>
       <button
