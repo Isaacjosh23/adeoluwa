@@ -20,13 +20,13 @@ export default async function AdminOverviewPage() {
     <div className="px-[2.4rem] sm:px-16 py-16 sm:py-[4.8rem] pt-40lg:pt-[4.8rem]">
       {/* Header */}
       <div className="mb-16">
-        <p className="text-[1rem] tracking-[0.24em] uppercase text-(--color-gold) font-medium mb-[0.8rem]">
+        <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.24em] uppercase text-(--color-gold) font-medium mb-[0.8rem]">
           Dashboard
         </p>
-        <h1 className="font-serif text-[3.6rem] sm:text-[4.4rem] font-light text-(--color-text-primary) leading-[1.1]">
+        <h1 className="font-serif text-[3.6rem] sm:text-[4.4rem] font-medium text-(--color-text-primary) leading-[1.1]">
           Welcome back
         </h1>
-        <p className="font-serif italic text-[1.5rem] text-(--color-text-muted) mt-[0.8rem]">
+        <p className="font-serif italic text-[1.7rem] font-normal text-(--color-text-muted) mt-[0.8rem]">
           Here&apos;s how the guest list is shaping up.
         </p>
       </div>

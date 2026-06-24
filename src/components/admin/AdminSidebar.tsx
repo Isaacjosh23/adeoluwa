@@ -52,7 +52,7 @@ export default function AdminSidebar({ userEmail }: { userEmail: string }) {
           <p className="font-serif italic text-[3.6rem] text-(--color-gold) leading-none">
             A ♡ O
           </p>
-          <p className="text-[1rem] tracking-[0.2em] uppercase text-(--color-text-muted) mt-4">
+          <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.2em] uppercase text-(--color-text-muted) mt-4">
             Coordinator Panel
           </p>
         </div>
@@ -88,13 +88,13 @@ export default function AdminSidebar({ userEmail }: { userEmail: string }) {
 
         {/* User + sign out */}
         <div className="border-t-[0.5px] border-(--color-gold-dim) p-8">
-          <p className="text-[1.1rem] text-(--color-text-muted) truncate mb-[1.2rem]">
+          <p className="text-[1.3rem] text-(--color-text-muted) truncate mb-[1.2rem]">
             {userEmail}
           </p>
           <form action={signOut}>
             <button
               type="submit"
-              className="w-full text-left text-[1.2rem] tracking-[0.08em] uppercase text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-200 flex items-center gap-4"
+              className="w-full text-left text-[1.2rem] tracking-[0.08em] uppercase text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-200 flex items-center gap-4 cursor-pointer"
             >
               <ExitIcon className="size-[1.6rem]" />
               Sign Out

@@ -33,167 +33,228 @@ Font.register({
 
 const GOLD = "#C4913A";
 const DARK = "#1A1714";
+const DARK2 = "#241E19";
 const CREAM = "#FAF7F2";
 const MUTED = "#9A8B7A";
-const GOLD_DIM = "rgba(196,145,58,0.2)";
+const GOLD_DIM = "rgba(196,145,58,0.25)";
+
+// Credit card size: 85.6mm x 54mm
+const CARD_WIDTH = "85.6mm";
+const CARD_HEIGHT = "54mm";
 
 const styles = StyleSheet.create({
   page: {
     backgroundColor: DARK,
+    width: CARD_WIDTH,
+    height: CARD_HEIGHT,
     padding: 0,
-    width: "148mm",
-    height: "210mm",
-    flexDirection: "column",
     position: "relative",
   },
 
-  // Gold border frame
+  // ── FRONT ──
   border: {
     position: "absolute",
-    top: 16,
-    left: 16,
-    right: 16,
-    bottom: 16,
+    top: 6,
+    left: 6,
+    right: 6,
+    bottom: 6,
     borderWidth: 0.5,
     borderColor: GOLD_DIM,
     borderStyle: "solid",
   },
 
-  content: {
+  frontContent: {
     flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 40,
-    paddingTop: 52,
-    paddingBottom: 44,
+    flexDirection: "row",
+    alignItems: "stretch",
+    padding: 14,
+    paddingHorizontal: 16,
   },
 
-  // Top section
-  top: {
-    alignItems: "center",
-    width: "100%",
+  // Left column — branding
+  leftCol: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    flex: 1,
+    paddingRight: 12,
+    borderRightWidth: 0.5,
+    borderRightColor: GOLD_DIM,
+    borderStyle: "solid",
   },
   eyebrow: {
     fontFamily: "Jost",
-    fontSize: 7,
-    letterSpacing: 3,
+    fontSize: 4.5,
+    letterSpacing: 2,
     color: GOLD,
-    textTransform: "uppercase",
-    marginBottom: 16,
-  },
-  monogram: {
-    fontFamily: "Cormorant",
-    fontSize: 42,
-    fontWeight: 300,
-    fontStyle: "italic",
-    color: GOLD,
-    letterSpacing: 4,
-    marginBottom: 10,
-  },
-  dividerLine: {
-    width: 40,
-    height: 0.5,
-    backgroundColor: GOLD_DIM,
-    marginVertical: 16,
-  },
-  weddingTitle: {
-    fontFamily: "Cormorant",
-    fontSize: 11,
-    fontWeight: 300,
-    color: CREAM,
-    letterSpacing: 3,
     textTransform: "uppercase",
     marginBottom: 4,
   },
+  monogram: {
+    fontFamily: "Cormorant",
+    fontSize: 22,
+    fontWeight: 300,
+    fontStyle: "italic",
+    color: GOLD,
+    letterSpacing: 2,
+    lineHeight: 1,
+  },
+  coupleNames: {
+    fontFamily: "Jost",
+    fontSize: 5,
+    letterSpacing: 1.5,
+    color: CREAM,
+    textTransform: "uppercase",
+    marginTop: 4,
+  },
+  dateBlock: {
+    marginTop: "auto",
+  },
+  dateLabel: {
+    fontFamily: "Jost",
+    fontSize: 5,
+    letterSpacing: 1.5,
+    color: MUTED,
+    textTransform: "uppercase",
+    marginBottom: 2,
+  },
+  dateValue: {
+    fontFamily: "Cormorant",
+    fontSize: 8,
+    fontWeight: 300,
+    color: CREAM,
+    letterSpacing: 0.5,
+  },
 
-  // Middle — guest name section
-  middle: {
-    alignItems: "center",
-    width: "100%",
-    paddingVertical: 28,
-    borderTopWidth: 0.5,
-    borderBottomWidth: 0.5,
-    borderColor: GOLD_DIM,
-    borderStyle: "solid",
+  // Right column — guest info
+  rightCol: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    flex: 1.2,
+    paddingLeft: 12,
   },
   admitsLabel: {
     fontFamily: "Jost",
-    fontSize: 7,
-    letterSpacing: 3,
+    fontSize: 4,
+    letterSpacing: 2,
     color: MUTED,
     textTransform: "uppercase",
-    marginBottom: 12,
+    marginBottom: 4,
   },
   guestName: {
     fontFamily: "Cormorant",
-    fontSize: 28,
+    fontSize: 16,
     fontWeight: 300,
     fontStyle: "italic",
     color: CREAM,
-    textAlign: "center",
     lineHeight: 1.2,
-    marginBottom: 8,
   },
   guestId: {
     fontFamily: "Jost",
-    fontSize: 8,
+    fontSize: 6,
     color: GOLD,
-    letterSpacing: 2,
-    marginTop: 4,
+    letterSpacing: 1.5,
+    marginTop: 3,
   },
   guestCount: {
     fontFamily: "Jost",
-    fontSize: 8,
-    color: MUTED,
+    fontSize: 5.5,
+    color: CREAM,
     letterSpacing: 1,
-    marginTop: 6,
+    marginTop: 2,
+  },
+  eventBadge: {
+    marginTop: "auto",
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    borderWidth: 0.5,
+    borderColor: GOLD_DIM,
+    borderStyle: "solid",
+  },
+  eventBadgeText: {
+    fontFamily: "Jost",
+    fontSize: 4.5,
+    letterSpacing: 1.5,
+    color: GOLD,
+    textTransform: "uppercase",
   },
 
-  // Bottom section
-  bottom: {
-    alignItems: "center",
-    width: "100%",
+  // ── BACK ──
+  backPage: {
+    backgroundColor: DARK2,
+    width: CARD_WIDTH,
+    height: CARD_HEIGHT,
+    padding: 0,
+    position: "relative",
   },
-  eventRow: {
+  backBorder: {
+    position: "absolute",
+    top: 6,
+    left: 6,
+    right: 6,
+    bottom: 6,
+    borderWidth: 0.5,
+    borderColor: GOLD_DIM,
+    borderStyle: "solid",
+  },
+  backContent: {
+    flex: 1,
+    padding: 16,
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+  backTop: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "100%",
-    marginBottom: 20,
+    alignItems: "flex-start",
   },
-  eventBlock: {
-    alignItems: "center",
+  backSection: {
     flex: 1,
   },
-  eventLabel: {
+  backSectionDivider: {
+    width: 0.5,
+    backgroundColor: GOLD_DIM,
+    marginHorizontal: 10,
+    alignSelf: "stretch",
+  },
+  backLabel: {
     fontFamily: "Jost",
-    fontSize: 6.5,
+    fontSize: 4,
     letterSpacing: 2,
     color: GOLD,
     textTransform: "uppercase",
-    marginBottom: 5,
+    marginBottom: 4,
   },
-  eventValue: {
+  backValue: {
     fontFamily: "Cormorant",
-    fontSize: 10,
+    fontSize: 8,
     fontWeight: 300,
     color: CREAM,
-    textAlign: "center",
-    letterSpacing: 0.5,
+    lineHeight: 1.4,
   },
-  eventDivider: {
-    width: 0.5,
-    backgroundColor: GOLD_DIM,
-    alignSelf: "stretch",
-    marginHorizontal: 8,
+  backBottom: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    borderTopWidth: 0.5,
+    borderTopColor: GOLD_DIM,
+    borderStyle: "solid",
+    paddingTop: 6,
   },
   hashtag: {
     fontFamily: "Cormorant",
-    fontSize: 9,
+    fontSize: 7,
     fontStyle: "italic",
     color: GOLD,
     letterSpacing: 1,
-    marginTop: 4,
+  },
+  note: {
+    fontFamily: "Jost",
+    fontSize: 4,
+    color: CREAM,
+    letterSpacing: 0.5,
+    textAlign: "right",
   },
 });
 
@@ -217,58 +278,84 @@ function EventPass({ guest }: { guest: GuestData }) {
 
   return (
     <Document>
-      <Page size="A5" style={styles.page}>
-        {/* Gold border frame */}
+      {/* ── FRONT ── */}
+      <Page size={[242.64, 153.07]} style={styles.page}>
         <View style={styles.border} />
-
-        <View style={styles.content}>
-          {/* Top */}
-          <View style={styles.top}>
-            <Text style={styles.eyebrow}>Wedding Invitation</Text>
-            <Text style={styles.monogram}>A ♡ O</Text>
-            <View style={styles.dividerLine} />
-            <Text style={styles.weddingTitle}>Adedamola & Oluwaseun</Text>
+        <View style={styles.frontContent}>
+          {/* Left — branding + date */}
+          <View style={styles.leftCol}>
+            <View>
+              <Text style={styles.eyebrow}>Access Card</Text>
+              <Text style={styles.monogram}>AO</Text>
+              <Text style={styles.coupleNames}>Adedamola & Oluwaseun</Text>
+            </View>
+            <View style={styles.dateBlock}>
+              <Text style={styles.dateLabel}>Date</Text>
+              <Text style={styles.dateValue}>Saturday, 15th Aug 2026</Text>
+            </View>
           </View>
 
-          {/* Middle — guest name */}
-          <View style={styles.middle}>
-            <Text style={styles.admitsLabel}>This pass admits</Text>
-            <Text style={styles.guestName}>
-              {guest.first_name} {guest.last_name}
-            </Text>
-            <Text style={styles.guestId}>{guest.guest_id}</Text>
-            <Text style={styles.guestCount}>
-              Party of {guest.guest_count}{" "}
-              {guest.guest_count === 1 ? "person" : "people"}
-            </Text>
+          {/* Right — guest details */}
+          <View style={styles.rightCol}>
+            <View>
+              <Text style={styles.admitsLabel}>This card admits</Text>
+              <Text style={styles.guestName}>
+                {guest.first_name}
+                {"\n"}
+                {guest.last_name}
+              </Text>
+              <Text style={styles.guestId}>{guest.guest_id}</Text>
+              <Text style={styles.guestCount}>
+                Card of {guest.guest_count}{" "}
+                {guest.guest_count === 1 ? "person" : "people"}
+              </Text>
+            </View>
+            <View style={styles.eventBadge}>
+              <Text style={styles.eventBadgeText}>{attendingLabel}</Text>
+            </View>
           </View>
+        </View>
+      </Page>
 
-          {/* Bottom — event details */}
-          <View style={styles.bottom}>
-            <View style={styles.eventRow}>
-              <View style={styles.eventBlock}>
-                <Text style={styles.eventLabel}>Date</Text>
-                <Text style={styles.eventValue}>
-                  Saturday{"\n"}15 August 2026
-                </Text>
-              </View>
-              <View style={styles.eventDivider} />
-              <View style={styles.eventBlock}>
-                <Text style={styles.eventLabel}>Event</Text>
-                <Text style={styles.eventValue}>{attendingLabel}</Text>
-              </View>
-              <View style={styles.eventDivider} />
-              <View style={styles.eventBlock}>
-                <Text style={styles.eventLabel}>Dress Code</Text>
-                <Text style={styles.eventValue}>
-                  Burgundy{"\n"}Peach · Gold
-                </Text>
-              </View>
+      {/* ── BACK ── */}
+      <Page size={[242.64, 153.07]} style={styles.backPage}>
+        <View style={styles.backBorder} />
+        <View style={styles.backContent}>
+          <View style={styles.backTop}>
+            {/* Ceremony */}
+            <View style={styles.backSection}>
+              <Text style={styles.backLabel}>Ceremony</Text>
+              <Text style={styles.backValue}>
+                The Cathedral of{"\n"}ST Barnabas{"\n"}10:00 AM
+              </Text>
             </View>
 
-            <View style={styles.dividerLine} />
+            <View style={styles.backSectionDivider} />
 
+            {/* Reception */}
+            <View style={styles.backSection}>
+              <Text style={styles.backLabel}>Reception</Text>
+              <Text style={styles.backValue}>
+                Diamond Arena{"\n"}Ilorin, Kwara State{"\n"}1:00 PM
+              </Text>
+            </View>
+
+            <View style={styles.backSectionDivider} />
+
+            {/* Dress code */}
+            <View style={styles.backSection}>
+              <Text style={styles.backLabel}>Dress Code</Text>
+              <Text style={styles.backValue}>
+                Burgundy{"\n"}Peach{"\n"}Gold
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.backBottom}>
             <Text style={styles.hashtag}>#AdeOluwa26</Text>
+            <Text style={styles.note}>
+              This pass is non-transferable.{"\n"}Strictly by invitation only.
+            </Text>
           </View>
         </View>
       </Page>

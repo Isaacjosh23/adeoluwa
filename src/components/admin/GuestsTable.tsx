@@ -103,14 +103,14 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
         {/* Export */}
         <button
           onClick={exportCSV}
-          className="px-[2.4rem] py-4 bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.14em] uppercase hover:bg-(--color-brown) transition-colors duration-200 shrink-0"
+          className="px-[2.4rem] py-4 bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.14em] uppercase hover:bg-(--color-brown) hover:text-(--color-text-inverse) transition-colors duration-200 shrink-0 cursor-pointer"
         >
           Export CSV
         </button>
       </div>
 
       {/* Results count */}
-      <p className="text-[1.2rem] text-(--color-text-muted) font-sans">
+      <p className="text-[1.5rem] text-(--color-text-muted) font-sans">
         Showing {filtered.length} of {guests.length} guests
       </p>
 
@@ -155,19 +155,19 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
                     ${i % 2 === 0 ? "bg-(--bg-admin-table-row)" : "bg-(--bg-admin-table-alt)"}
                   `}
                 >
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.2rem] text-(--color-gold) font-medium whitespace-nowrap">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-gold) font-medium whitespace-nowrap">
                     {guest.guest_id}
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.3rem] text-(--color-text-primary) whitespace-nowrap">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) whitespace-nowrap">
                     {guest.first_name} {guest.last_name}
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.3rem] text-(--color-text-primary)">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary)">
                     {guest.email}
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.3rem] text-(--color-text-muted) whitespace-nowrap">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
                     {guest.phone ?? "—"}
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.3rem] text-(--color-text-primary) text-center">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) text-center">
                     {guest.guest_count}
                   </td>
                   <td className="px-[1.6rem] py-[1.4rem] whitespace-nowrap">
@@ -183,7 +183,7 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
                       {guest.status}
                     </span>
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.3rem] text-(--color-text-muted) whitespace-nowrap">
+                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
                     {new Date(guest.submitted_at).toLocaleDateString("en-GB", {
                       day: "2-digit",
                       month: "short",

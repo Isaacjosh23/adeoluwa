@@ -40,7 +40,7 @@ export default function AdminLoginPage() {
           <p className="font-serif italic text-[4.8rem] text-(--color-gold) leading-none mb-[1.2rem]">
             A ♡ O
           </p>
-          <p className="text-[1rem] tracking-[0.24em] uppercase text-(--color-text-muted)">
+          <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.24em] uppercase text-(--color-text-muted)">
             Coordinator Login
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-[1.2rem] py-[1.4rem] bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:bg-(--color-brown) disabled:opacity-50 cursor-pointer"
+            className="mt-[1.2rem] py-[1.4rem] bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:bg-(--color-brown) disabled:opacity-50 cursor-pointer hover:text-(--color-text-inverse)"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

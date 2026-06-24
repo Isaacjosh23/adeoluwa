@@ -134,7 +134,7 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
       </div>
 
       {/* Submit */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1.6rem] pt-[1.6rem] border-t-[0.5px] border-(--color-gold-dim)">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1.6rem] pt-[1.6rem]">
         <button
           type="submit"
           disabled={loading}

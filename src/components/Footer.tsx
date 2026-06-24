@@ -17,10 +17,10 @@ export default function Footer() {
           <p className="font-serif italic text-[clamp(5.2rem,10vw,8.8rem)] font-light text-(--color-gold) leading-none tracking-[0.08em]">
             A ♡ O
           </p>
-          <p className="font-serif italic text-[1.4rem] sm:text-[1.6rem] text-(--color-text-muted)">
+          <p className="font-serif italic text-[1.4rem] sm:text-[1.7rem] text-(--color-text-inverse)">
             Saturday, 15th August 2026 · Ilorin, Kwara State
           </p>
-          <p className="font-serif italic text-[1.3rem] sm:text-[1.4rem] text-(--color-gold) tracking-[0.08em]">
+          <p className="font-sans font-normal italic text-[1.3rem] sm:text-[1.4rem] text-(--color-gold) tracking-[0.08em]">
             #AdeOluwa2026
           </p>
         </div>
@@ -42,20 +42,20 @@ export default function Footer() {
         <div className="w-full max-w-160 h-[0.5px] bg-(--color-gold-dim)" />
 
         <div className="flex flex-col sm:flex-row items-center gap-[0.8rem] sm:gap-[3.2rem]">
-          <p className="font-serif italic text-[1.3rem] text-(--color-text-muted) font-medium">
+          <p className="font-serif italic text-[1.5rem] text-(--color-text-muted) font-medium">
             Questions? Reach the coordinators:
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-[0.8rem] sm:gap-[2.4rem]">
             <a
               href="tel:+2348000000001"
-              className="text-[1.2rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
+              className="text-[1.3rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
             >
               Coordinator 1 — 0800 000 0001
             </a>
             <span className="hidden sm:block text-(--color-gold-dim)">·</span>
             <a
               href="tel:+2348000000002"
-              className="text-[1.2rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
+              className="text-[1.3rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
             >
               Coordinator 2 — 0800 000 0002
             </a>

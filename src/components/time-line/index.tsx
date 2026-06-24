@@ -8,7 +8,7 @@ export default function Timeline() {
     >
       <div className="max-w-480 mx-auto">
         <div className="mb-16 sm:mb-[5.6rem]">
-          <p className="text-[1rem] sm:text-[1.rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
+          <p className="text-[1rem] sm:text-[1.3rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
             Milestones
           </p>
           <h2 className="font-serif text-[clamp(3.2rem,5vw,6rem)] leading-[1.1] text-(--color-text-primary) mt-[1.2rem] font-medium">
@@ -34,10 +34,10 @@ export default function Timeline() {
                     ${isEven ? "sm:pr-[6.4rem] sm:text-right" : "sm:pl-[6.4rem] sm:text-left"}
                   `}
                 >
-                  <h3 className="font-serif text-[2.2rem] sm:text-[2.8rem] font-light text-(--color-text-primary) leading-[1.2] mb-[0.8rem]">
+                  <h3 className="font-serif text-[2.2rem] sm:text-[2.8rem] font-medium text-(--color-text-primary) leading-[1.2] mb-[0.8rem]">
                     {milestone.event}
                   </h3>
-                  <p className="font-serif italic text-[1.4rem] sm:text-[1.6rem] text-(--color-text-muted) leading-[1.7]">
+                  <p className="font-serif italic font-medium text-[1.5rem] sm:text-[1.7rem] text-(--color-text-muted) leading-[1.7]">
                     {milestone.description}
                   </p>
                 </div>

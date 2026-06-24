@@ -96,21 +96,21 @@ export default function PassesClient({ guests }: PassesClientProps) {
         <button
           onClick={downloadAll}
           disabled={bulkLoading || filtered.length === 0}
-          className="px-[2.4rem] py-4 bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.14em] uppercase hover:bg-(--color-brown) transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+          className="px-[2.4rem] py-4 bg-(--color-gold) text-(--color-dark) font-sans text-[1.1rem] font-medium tracking-[0.14em] uppercase hover:bg-(--color-brown) hover:text-(--color-text-inverse) transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed shrink-0 cursor-pointer"
         >
           {bulkLoading ? "Generating..." : `Download All (${filtered.length})`}
         </button>
       </div>
 
       {/* Results count */}
-      <p className="text-[1.2rem] text-(--color-text-muted) font-sans">
+      <p className="text-[1.5rem] text-(--color-text-muted) font-sans">
         {filtered.length} confirmed guest{filtered.length !== 1 ? "s" : ""}
       </p>
 
       {/* Guest cards grid */}
       {filtered.length === 0 ? (
         <div className="text-center py-[6.4rem] border-[0.5px] border-(--color-gold-dim)">
-          <p className="font-serif italic text-[1.8rem] text-(--color-text-muted)">
+          <p className="font-serif text-[1.8rem] text-(--color-text-muted)">
             No confirmed guests found
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function PassesClient({ guests }: PassesClientProps) {
               {/* Guest info */}
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="font-serif text-[1.9rem] font-light text-(--color-text-primary) leading-[1.2]">
+                  <p className="font-serif text-[1.9rem] font-medium text-(--color-text-primary) leading-[1.2]">
                     {guest.first_name} {guest.last_name}
                   </p>
                   <p className="text-[1.1rem] tracking-widest text-(--color-gold) font-medium mt-[0.4rem]">
@@ -142,7 +142,7 @@ export default function PassesClient({ guests }: PassesClientProps) {
                   <span className="text-[1rem] tracking-[0.14em] uppercase text-(--color-text-muted) font-medium w-28 shrink-0">
                     Email
                   </span>
-                  <span className="text-[1.2rem] text-(--color-text-primary) truncate">
+                  <span className="text-[1.3rem] text-(--color-text-primary) truncate">
                     {guest.email}
                   </span>
                 </div>
@@ -150,7 +150,7 @@ export default function PassesClient({ guests }: PassesClientProps) {
                   <span className="text-[1rem] tracking-[0.14em] uppercase text-(--color-text-muted) font-medium w-28 shrink-0">
                     Guests
                   </span>
-                  <span className="text-[1.2rem] text-(--color-text-primary)">
+                  <span className="text-[1.3rem] text-(--color-text-primary)">
                     {guest.guest_count}{" "}
                     {guest.guest_count === 1 ? "person" : "people"}
                   </span>
@@ -159,7 +159,7 @@ export default function PassesClient({ guests }: PassesClientProps) {
                   <span className="text-[1rem] tracking-[0.14em] uppercase text-(--color-text-muted) font-medium w-28 shrink-0">
                     Event
                   </span>
-                  <span className="text-[1.2rem] text-(--color-text-primary) capitalize">
+                  <span className="text-[1.3rem] text-(--color-text-primary) capitalize">
                     {guest.attending}
                   </span>
                 </div>
