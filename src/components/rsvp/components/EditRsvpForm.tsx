@@ -5,7 +5,7 @@ import RightAltArrowIcon from "@/ui/icons/right-alt-arrow";
 
 const inputClass = `
   w-full bg-transparent border-b-[0.5px] border-(--color-gold-dim)
-  px-0 py-[1rem] font-serif text-[1.5rem] text-(--color-text-primary)
+  px-0 py-[1rem] font-serif text-[1.8rem] text-(--color-text-primary)
   placeholder:text-(--color-text-muted) placeholder:font-serif placeholder:italic
   focus:outline-none focus:border-(--color-gold)
   transition-colors duration-300
@@ -13,7 +13,7 @@ const inputClass = `
 
 const labelClass = `
   block text-[1rem] sm:text-[1.2rem] tracking-[0.22em] uppercase
-  text-(--color-text-muted) font-semibold font-sans mb-[0.4rem]
+  text-(--color-text-muted) font-medium font-sans mb-[0.4rem]
 `;
 
 export default function EditRsvpForm(props: EditRsvpFormProps) {
@@ -44,7 +44,7 @@ export default function EditRsvpForm(props: EditRsvpFormProps) {
         <p className="text-[1rem] text-(--color-text-inverse) font-medium uppercase tracking-wide">
           Your Guest ID
         </p>
-        <p className="text-[1.5rem] font-serif text-(--color-gold)">
+        <p className="text-[1.7rem] font-medium font-sans text-(--color-gold)">
           {guestId}
         </p>
       </div>
@@ -148,11 +148,11 @@ export default function EditRsvpForm(props: EditRsvpFormProps) {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1.6rem] pt-[1.6rem] border-t-[0.5px] border-(--color-gold-dim)">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1.6rem] pt-[1.6rem]">
           <button
             type="submit"
             disabled={loading}
-            className="px-12 py-[1.2rem] bg-(--color-gold) text-(--color-dark) font-sans text-[1rem] sm:text-[1.2rem] font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-(--color-brown) hover:text-(--color-text-inverse)! disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            className="px-12 py-[1.2rem] bg-(--color-gold) text-(--color-dark) font-sans text-[1rem] sm:text-[1.2rem] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:bg-(--color-brown) hover:text-(--color-text-inverse)! disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             {loading ? (
               <p>Saving...</p>
@@ -170,7 +170,7 @@ export default function EditRsvpForm(props: EditRsvpFormProps) {
             type="button"
             onClick={handleCancel}
             disabled={loading}
-            className="px-8 py-[1.2rem] bg-transparent border border-(--color-gold) text-(--color-gold) font-sans text-[1rem] sm:text-[1.2rem] font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-(--color-gold) hover:text-(--color-dark) disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+            className="px-8 py-[1.2rem] bg-transparent border border-(--color-gold) text-(--color-gold) font-sans text-[1rem] sm:text-[1.2rem] font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:border-none disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             Cancel My RSVP
           </button>

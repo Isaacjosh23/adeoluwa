@@ -31,7 +31,7 @@ function Cards() {
           </p>
 
           {/* Venue name */}
-          <p className="font-serif text-[2rem] sm:text-[2.4rem] font-light text-(--color-text-inverse) leading-[1.3]">
+          <p className="font-serif text-[2rem] sm:text-[2.4rem] text-(--color-text-inverse) leading-[1.3] font-medium">
             {detail.venue}
           </p>
 
@@ -43,7 +43,7 @@ function Cards() {
             <span className="text-[0.9rem] tracking-[0.2em] uppercase text-(--color-gold) font-medium">
               {detail.timeIcon}
             </span>
-            <span className="font-serif text-[1.6rem] text-(--color-text-inverse)">
+            <span className="font-serif text-[1.6rem] text-(--color-text-inverse) font-medium">
               {detail.time}
             </span>
           </div>
@@ -53,7 +53,7 @@ function Cards() {
             <span className="text-[0.9rem] tracking-[0.2em] uppercase text-(--color-gold) font-medium">
               {detail.dateIcon}
             </span>
-            <span className="font-serif text-[1.6rem] text-(--color-text-inverse)">
+            <span className="font-serif text-[1.6rem] text-(--color-text-inverse) font-medium">
               {detail.date}
             </span>
           </div>

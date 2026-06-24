@@ -102,6 +102,60 @@ export async function POST(req: NextRequest) {
       console.error("Resend email error:", emailError);
     }
 
+    // Send notification email to coordinator
+    try {
+      await resend.emails.send({
+        from: "Adedamola & Oluwaseun <onboarding@resend.dev>",
+        to: "ebhamenjoshua@gmail.com", // replace with real coordinator email later
+        subject: `New RSVP — ${body.firstName} ${body.lastName}`,
+        html: `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+
+        <h2 style="font-family: Georgia, serif; font-weight: normal; color: #C4913A; text-align: center; font-size: 24px;">
+          New RSVP Received
+        </h2>
+
+        <div style="background: #f9f9f9; padding: 20px; border-left: 3px solid #C4913A; margin: 20px 0;">
+          <p><strong>Name:</strong> ${body.firstName} ${body.lastName}</p>
+          <p><strong>Email:</strong> ${body.email}</p>
+          <p><strong>Phone:</strong> ${body.phone || "Not provided"}</p>
+          <p><strong>Number of guests:</strong> ${body.guestCount}</p>
+          <p><strong>Guest ID:</strong> ${rsvpData.guest_id}</p>
+          ${body.message ? `<p><strong>Message:</strong> "${body.message}"</p>` : ""}
+        </div>
+
+        <p style="text-align: center;">
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"}/admin/guests"
+             style="background: #C4913A; color: #fff; padding: 12px 28px; text-decoration: none; font-weight: bold; display: inline-block;">
+            View in Dashboard
+          </a>
+        </p>
+
+        <p style="text-align: center; color: #9A8B7A; font-style: italic; font-family: Georgia, serif; margin-top: 32px;">
+          #AdeOluwa26
+        </p>
+      </div>
+    `,
+      });
+    } catch (coordinatorEmailError) {
+      console.error("Coordinator email error:", coordinatorEmailError);
+    }
+
+    // Trigger push notification to coordinators
+    try {
+      const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+      await fetch(`${appUrl}/api/admin/push/send`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          guestName: `${body.firstName} ${body.lastName}`,
+        }),
+      });
+    } catch (pushErr) {
+      console.error("Push notification error:", pushErr);
+      // Don't fail the RSVP if push fails
+    }
+
     return NextResponse.json(
       {
         success: true,

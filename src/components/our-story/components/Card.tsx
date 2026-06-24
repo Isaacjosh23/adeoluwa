@@ -36,7 +36,7 @@ function Card() {
             draggable={false}
           />
           <div className="absolute bottom-0 left-0 right-0 px-8 pt-[3.6rem] pb-8 bg-linear-to-t from-[rgba(14,12,11,0.88)] to-transparent">
-            <p className="font-serif italic text-[1.5rem] sm:text-[1.6rem] text-[rgba(250,247,242,0.9)] leading-[1.4]">
+            <p className="font-serif italic text-[1.5rem] sm:text-[1.7rem] text-[rgba(250,247,242,0.9)] leading-[1.4] font-medium">
               {memory.caption}
             </p>
           </div>

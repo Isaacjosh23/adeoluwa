@@ -10,7 +10,7 @@ function MainContent() {
         We are getting married
       </p>
 
-      <h1 className="font-serif text-[clamp(5rem,7vw,9rem)] font-light leading-none tracking-tight text-(--color-text-inverse) opacity-0 animate-fadeUp [animation-delay:0.6s] [animation-fill-mode:forwards]">
+      <h1 className="font-serif text-[clamp(5rem,7vw,9rem)] leading-none tracking-tight text-(--color-text-inverse) opacity-0 animate-fadeUp [animation-delay:0.6s] [animation-fill-mode:forwards] font-medium">
         <em className="italic text-(--color-gold)">Adedamola</em>
         <span className="block font-serif italic text-[clamp(2rem,4vw,4rem)] text-(--color-text-inverse) my-[0.6rem] sm:my-[0.8rem]">
           &
@@ -31,7 +31,7 @@ function MainContent() {
         Saturday · 15th August 2026
       </p>
 
-      <p className="font-serif italic text-[1.3rem] sm:text-[1.4rem] text-(--color-gold) mt-[0.6rem] tracking-[0.06em] opacity-0 animate-fadeUp [animation-delay:1.5s] [animation-fill-mode:forwards]">
+      <p className="font-sans italic text-[1.3rem] sm:text-[1.4rem] text-(--color-gold) mt-[0.6rem] tracking-[0.06em] opacity-0 animate-fadeUp [animation-delay:1.5s] [animation-fill-mode:forwards] font-normal">
         #AdeOluwa26
       </p>
 
