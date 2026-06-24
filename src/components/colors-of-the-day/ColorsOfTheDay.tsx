@@ -24,7 +24,8 @@ export default function ColorsOfTheDay() {
 
         {/* Footer note */}
         <p className="mt-16 sm:mt-[5.6rem] font-serif italic text-[1.4rem] sm:text-[1.8rem] text-(--color-gold) max-w-240 font-normal">
-          Aso-ebi fabric is available — contact the coordinator for details.
+          Aso-ebi fabric is available — contact the coordinator for details
+          (Damilola — 09151027961 Ayokunle — 09135230118).
         </p>
       </div>
     </section>

@@ -47,17 +47,17 @@ export default function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-[0.8rem] sm:gap-[2.4rem]">
             <a
-              href="tel:+2348000000001"
+              href="tel:+2349151027961"
               className="text-[1.3rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
             >
-              Coordinator 1 — 0800 000 0001
+              Damilola — 09151027961
             </a>
             <span className="hidden sm:block text-(--color-gold-dim)">·</span>
             <a
-              href="tel:+2348000000002"
+              href="tel:+2349135230118"
               className="text-[1.3rem] tracking-widest text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-300 font-"
             >
-              Coordinator 2 — 0800 000 0002
+              Ayokunle — 09135230118
             </a>
           </div>
         </div>
