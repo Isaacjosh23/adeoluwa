@@ -20,10 +20,10 @@ function Toast({ visible, onClose }: ToastProps) {
 
         {/* Text */}
         <div className="flex flex-col gap-[0.4rem] flex-1">
-          <p className="font-serif text-[1.8rem] font-light text-(--color-text-inverse)">
+          <p className="font-serif text-[2rem] font-light text-(--color-text-inverse)">
             You&apos;re confirmed!
           </p>
-          <p className="font-serif italic text-[1.3rem] text-(--color-text-muted) leading-[1.6]">
+          <p className="font-serif italic font-normal text-[1.7rem] text-(--color-text-muted) leading-[1.6]">
             We&apos;ll see you on August 15th. Check your email for
             confirmation.
           </p>

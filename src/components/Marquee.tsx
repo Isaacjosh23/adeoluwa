@@ -14,7 +14,7 @@ export default function Marquee() {
         {[...items, ...items].map((item, i) => (
           <span
             key={i}
-            className="font-serif italic text-[1.4rem] sm:text-[1.7rem] text-[rgba(196,145,58,0.65)] inline-flex items-center"
+            className="font-serif italic text-[1.4rem] sm:text-[1.8rem] text-[rgba(196,145,58,0.65)] inline-flex items-center font-medium"
           >
             {item}
             <span className="not-italic text-[0.6rem] sm:text-[0.7rem] text-(--color-gold) mx-[1.6rem] sm:mx-[2.4rem]">

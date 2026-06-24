@@ -8,10 +8,10 @@ export default function Etiquette() {
     >
       <div className="max-w-480 mx-auto">
         <div className="mb-16 sm:mb-[5.6rem]">
-          <p className="text-[1rem] md:text-[1.2rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
+          <p className="text-[1rem] sm:text-[1.3rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
             House Rules
           </p>
-          <h2 className="font-serif text-[clamp(3.2rem,5vw,6rem)] font-light leading-[1.1] text-(--color-text-inverse) mt-[1.2rem]">
+          <h2 className="font-serif text-[clamp(3.2rem,5vw,6rem)] font-medium leading-[1.1] text-(--color-text-inverse) mt-[1.2rem]">
             Before you{" "}
             <em className="italic text-(--color-gold-light)">show up</em>
           </h2>
@@ -39,11 +39,11 @@ export default function Etiquette() {
                     {rule.number}
                   </span>
 
-                  <h3 className="text-[1rem] sm:text-[1.2rem] tracking-[0.16em] uppercase text-(--color-gold) font-medium font-sans">
+                  <h3 className="text-[1rem] sm:text-[1.3rem] tracking-[0.16em] uppercase text-(--color-gold) font-medium font-sans">
                     {rule.title}
                   </h3>
 
-                  <p className="font-serif italic text-[1.4rem] sm:text-[1.5rem] text-[rgba(250,247,242,0.5)] leading-[1.75]">
+                  <p className="font-serif italic text-[1.5rem] sm:text-[1.6rem] text-(--color-text-inverse) leading-[1.75]">
                     {rule.description}
                   </p>
                 </div>

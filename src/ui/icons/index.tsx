@@ -1,15 +1,19 @@
 import { IconProps, Icons } from "./_types";
 import AsterikIcon from "./asterik";
+import CardIcon from "./card";
 import CheckIcon from "./check";
 import ChurchIcon from "./church";
 import ClockIcon from "./clock";
 import CloseIcon from "./close";
 import DateIcon from "./date";
+import ExitIcon from "./exit";
+import GuestIcon from "./guest";
 import HallIcon from "./hall";
 import IndexFingerUp from "./index-finger-up";
 import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
 import MenuIcon from "./menu";
+import MenuGridIcon from "./menu-grid";
 import MuteIcon from "./mute";
 import RightAltArrowIcon from "./right-alt-arrow";
 import RightArrowIcon from "./right-arrow";
@@ -28,6 +32,9 @@ export function Icon({ type, className }: Props) {
     case "asterik":
       return <AsterikIcon {...props} />;
 
+    case "card":
+      return <CardIcon {...props} />;
+
     case "check":
       return <CheckIcon {...props} />;
 
@@ -43,6 +50,12 @@ export function Icon({ type, className }: Props) {
     case "date":
       return <DateIcon {...props} />;
 
+    case "exit":
+      return <ExitIcon {...props} />;
+
+    case "guest":
+      return <GuestIcon {...props} />;
+
     case "hall":
       return <HallIcon {...props} />;
 
@@ -57,6 +70,9 @@ export function Icon({ type, className }: Props) {
 
     case "menu":
       return <MenuIcon {...props} />;
+
+    case "menu-grid":
+      return <MenuGridIcon {...props} />;
 
     case "mute":
       return <MuteIcon {...props} />;

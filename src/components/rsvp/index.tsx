@@ -25,18 +25,18 @@ export default function RSVP() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-16 sm:mb-[5.6rem]">
-            <p className="text-[1rem] md:text-[1.2rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
+            <p className="text-[1rem] sm:text-[1.3rem] uppercase text-(--color-gold) font-medium tracking-[0.32em] font-sans">
               Confirm Your Attendance
             </p>
-            <h2 className="font-serif text-[clamp(3.2rem,5vw,6rem)] font-light leading-[1.1] text-(--color-text-primary) mt-[1.2rem]">
+            <h2 className="font-serif text-[clamp(3.2rem,5vw,6rem)] font-medium leading-[1.1] text-(--color-text-primary) mt-[1.2rem]">
               Tell us{" "}
               <em className="italic text-(--color-gold)">you&apos;re coming</em>
             </h2>
-            <p className="font-serif italic text-[1.5rem] sm:text-[1.7rem] text-(--color-text-muted) mt-[1.6rem] leading-[1.7]">
+            <p className="font-serif italic text-[1.5rem] sm:text-[1.7rem] text-(--color-text-muted) mt-[1.6rem] leading-[1.7] font-normal">
               We&apos;re saving you a seat and a plate — just say the word. RSVP
               closes{" "}
               <strong className="not-italic font-medium text-(--color-text-primary)">
-                July 31, 2025.
+                July 31, 2026.
               </strong>
             </p>
           </div>
