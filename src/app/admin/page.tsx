@@ -10,7 +10,6 @@ export default async function AdminOverviewPage() {
 
   const totalRsvps = rsvps?.length ?? 0;
   const confirmed = rsvps?.filter((r) => r.status === "confirmed") ?? [];
-  const cancelled = rsvps?.filter((r) => r.status === "cancelled") ?? [];
   const totalGuests = confirmed.reduce(
     (sum, r) => sum + (r.guest_count || 0),
     0,
@@ -36,7 +35,6 @@ export default async function AdminOverviewPage() {
         <StatCard label="Total RSVPs" value={totalRsvps} />
         <StatCard label="Total Guests" value={totalGuests} />
         <StatCard label="Confirmed" value={confirmed.length} accent="gold" />
-        <StatCard label="Cancelled" value={cancelled.length} accent="muted" />
       </div>
     </div>
   );

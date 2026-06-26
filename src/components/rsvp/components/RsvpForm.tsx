@@ -134,7 +134,7 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
       </div>
 
       {/* Submit */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-[1.6rem] pt-[1.6rem]">
+      <div className="pt-[1.6rem]">
         <button
           type="submit"
           disabled={loading}
@@ -151,9 +151,6 @@ function RsvpForm({ form, loading, onChange, onSubmit }: RsvpFormProps) {
             </p>
           )}
         </button>
-        <p className="font-serif italic text-[1.5rem] text-(--color-text-muted) font-medium">
-          You will receive a confirmation email shortly.
-        </p>
       </div>
     </form>
   );

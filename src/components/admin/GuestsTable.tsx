@@ -21,7 +21,6 @@ interface GuestsTableProps {
 
 export default function GuestsTable({ guests }: GuestsTableProps) {
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
 
   // ── FILTER ──
   const filtered = guests.filter((g) => {
@@ -33,9 +32,7 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
       g.email.toLowerCase().includes(search.toLowerCase()) ||
       g.guest_id.toLowerCase().includes(search.toLowerCase());
 
-    const matchesStatus = statusFilter === "all" || g.status === statusFilter;
-
-    return matchesSearch && matchesStatus;
+    return matchesSearch;
   });
 
   // ── CSV EXPORT ──
@@ -47,7 +44,6 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
       "Email",
       "Phone",
       "Guests",
-      "Status",
       "Submitted At",
     ];
     const rows = filtered.map((g) => [
@@ -87,17 +83,6 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full sm:w-lg bg-(--bg-admin-card) border-[0.5px] border-(--color-gold-dim) px-[1.6rem] py-4 font-sans text-[1.3rem] text-(--color-text-primary) placeholder:text-(--color-text-muted) focus:outline-none focus:border-(--color-gold) transition-colors duration-200"
           />
-
-          {/* Status filter */}
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="bg-(--bg-admin-card) border-[0.5px] border-(--color-gold-dim) px-[1.6rem] py-4 font-sans text-[1.3rem] text-(--color-text-primary) focus:outline-none focus:border-(--color-gold) transition-colors duration-200 cursor-pointer"
-          >
-            <option value="all">All Statuses</option>
-            <option value="confirmed">Confirmed</option>
-            <option value="cancelled">Cancelled</option>
-          </select>
         </div>
 
         {/* Export */}
@@ -129,22 +114,16 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
           <table className="w-full border-[0.5px] border-(--color-gold-dim) text-left border-collapse">
             <thead>
               <tr className="bg-(--bg-admin-sidebar) border-b-[0.5px] border-(--color-gold-dim)">
-                {[
-                  "Guest ID",
-                  "Name",
-                  "Email",
-                  "Phone",
-                  "Guests",
-                  "Status",
-                  "Date",
-                ].map((h) => (
-                  <th
-                    key={h}
-                    className="px-[1.6rem] py-[1.4rem] text-[1rem] tracking-[0.16em] uppercase text-(--color-gold) font-medium font-sans whitespace-nowrap"
-                  >
-                    {h}
-                  </th>
-                ))}
+                {["Guest ID", "Name", "Email", "Phone", "Guests", "Date"].map(
+                  (h) => (
+                    <th
+                      key={h}
+                      className="px-[1.6rem] py-[1.4rem] text-[1rem] tracking-[0.16em] uppercase text-(--color-gold) font-medium font-sans whitespace-nowrap"
+                    >
+                      {h}
+                    </th>
+                  ),
+                )}
               </tr>
             </thead>
             <tbody>
@@ -158,31 +137,23 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-gold) font-medium whitespace-nowrap">
                     {guest.guest_id}
                   </td>
+
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) whitespace-nowrap">
                     {guest.first_name} {guest.last_name}
                   </td>
+
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary)">
                     {guest.email}
                   </td>
+
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
                     {guest.phone ?? "—"}
                   </td>
+
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) text-center">
                     {guest.guest_count}
                   </td>
-                  <td className="px-[1.6rem] py-[1.4rem] whitespace-nowrap">
-                    <span
-                      className={`inline-block px-4 py-[0.3rem] text-[1rem] tracking-[0.12em] uppercase font-medium rounded-full font-sans
-                        ${
-                          guest.status === "confirmed"
-                            ? "bg-[rgba(196,145,58,0.12)] text-(--color-gold) border-[0.5px] border-(--color-gold-dim)"
-                            : "bg-[rgba(255,255,255,0.05)] text-(--color-text-muted) border-[0.5px] border-(--color-gold-dim)"
-                        }
-                      `}
-                    >
-                      {guest.status}
-                    </span>
-                  </td>
+
                   <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
                     {new Date(guest.submitted_at).toLocaleDateString("en-GB", {
                       day: "2-digit",
