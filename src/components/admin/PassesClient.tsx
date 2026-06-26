@@ -104,14 +104,14 @@ export default function PassesClient({ guests }: PassesClientProps) {
 
       {/* Results count */}
       <p className="text-[1.5rem] text-(--color-text-muted) font-sans">
-        {filtered.length} confirmed guest{filtered.length !== 1 ? "s" : ""}
+        {filtered.length} guest{filtered.length !== 1 ? "s" : ""}
       </p>
 
       {/* Guest cards grid */}
       {filtered.length === 0 ? (
         <div className="text-center py-[6.4rem] border-[0.5px] border-(--color-gold-dim)">
           <p className="font-serif text-[1.8rem] text-(--color-text-muted)">
-            No confirmed guests found
+            No guests found
           </p>
         </div>
       ) : (

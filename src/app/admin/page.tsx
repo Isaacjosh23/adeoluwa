@@ -8,9 +8,11 @@ export default async function AdminOverviewPage() {
     .from("rsvps")
     .select("guest_count, status");
 
+  const safeRsvps = rsvps ?? [];
+
   const totalRsvps = rsvps?.length ?? 0;
-  const confirmed = rsvps?.filter((r) => r.status === "confirmed") ?? [];
-  const totalGuests = confirmed.reduce(
+
+  const totalGuests = safeRsvps.reduce(
     (sum, r) => sum + (r.guest_count || 0),
     0,
   );
@@ -34,7 +36,6 @@ export default async function AdminOverviewPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.6rem]">
         <StatCard label="Total RSVPs" value={totalRsvps} />
         <StatCard label="Total Guests" value={totalGuests} />
-        <StatCard label="Confirmed" value={confirmed.length} accent="gold" />
       </div>
     </div>
   );
