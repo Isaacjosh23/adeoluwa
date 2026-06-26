@@ -24,8 +24,7 @@ function Toast({ visible, onClose }: ToastProps) {
             You&apos;re confirmed!
           </p>
           <p className="font-serif italic font-normal text-[1.7rem] text-(--color-text-muted) leading-[1.6]">
-            We&apos;ll see you on August 15th. Check your email for
-            confirmation.
+            We can&apos;t wait to celebrate with you on August 15th.
           </p>
         </div>
 
