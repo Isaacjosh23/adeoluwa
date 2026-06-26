@@ -105,9 +105,6 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
           <p className="font-serif italic text-[1.8rem] text-(--color-text-muted)">
             No guests found
           </p>
-          <p className="text-[1.3rem] text-(--color-text-muted) mt-[0.8rem]">
-            Try adjusting your search or filter
-          </p>
         </div>
       ) : (
         <div className="overflow-x-auto">

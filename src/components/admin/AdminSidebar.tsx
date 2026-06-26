@@ -94,7 +94,7 @@ export default function AdminSidebar({ userEmail }: { userEmail: string }) {
           <form action={signOut}>
             <button
               type="submit"
-              className="w-full text-left text-[1.2rem] tracking-[0.08em] uppercase text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-200 flex items-center gap-4 cursor-pointer"
+              className="w-full text-left font-medium text-[1.2rem] tracking-[0.08em] uppercase text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-200 flex items-center gap-4 cursor-pointer"
             >
               <ExitIcon className="size-[1.6rem]" />
               Sign Out
