@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import EyeOpenIcon from "@/ui/icons/eye-open";
+import EyeCloseIcon from "@/ui/icons/eye-close";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -10,6 +12,7 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +33,10 @@ export default function AdminLoginPage() {
 
     router.push("/admin");
     router.refresh();
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -69,17 +76,29 @@ export default function AdminLoginPage() {
             />
           </div>
 
-          <div>
+          <div className="relative">
             <label className="block text-[1rem] tracking-[0.2em] uppercase text-(--color-text-muted) font-medium mb-[0.8rem]">
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full bg-transparent border-b-[0.5px] border-(--color-gold-dim) px-0 py-[1.2rem] font-serif text-[1.6rem] text-(--color-text-inverse) focus:outline-none focus:border-(--color-gold) transition-colors duration-300"
             />
+
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute right-4 top-[3.8rem] focus:outline-none cursor-pointer"
+            >
+              {showPassword ? (
+                <EyeOpenIcon className="size-8 text-(--color-gold)" />
+              ) : (
+                <EyeCloseIcon className="size-8 text-(--color-gold)" />
+              )}
+            </button>
           </div>
 
           <button
