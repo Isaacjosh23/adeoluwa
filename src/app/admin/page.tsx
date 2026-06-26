@@ -18,7 +18,7 @@ export default async function AdminOverviewPage() {
   );
 
   return (
-    <div className="px-[2.4rem] sm:px-16 py-16 sm:py-[4.8rem] pt-40lg:pt-[4.8rem]">
+    <div className="px-[2.4rem] sm:px-16 py-16 sm:py-[4.8rem] pt-40 lg:pt-[4.8rem]">
       {/* Header */}
       <div className="mb-16">
         <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.24em] uppercase text-(--color-gold) font-medium mb-[0.8rem]">
