@@ -12,7 +12,7 @@ export default async function GuestsPage() {
   if (error) {
     return (
       <div className="px-[2.4rem] sm:px-16 py-16 pt-40 lg:pt-[4.8rem]">
-        <p className="text-red-400 font-serif italic text-[1.6rem]">
+        <p className="text-red-400 font-medium italic text-[1.6rem]">
           Failed to load guests. Please refresh.
         </p>
       </div>
