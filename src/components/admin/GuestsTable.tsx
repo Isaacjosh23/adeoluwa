@@ -1,8 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import DesktopTable from "./DesktopTable";
+import MobileTable from "./MobileTable";
 
-interface Guest {
+export interface Guest {
   id: string;
   guest_id: string;
   first_name: string;
@@ -20,7 +23,9 @@ interface GuestsTableProps {
 }
 
 export default function GuestsTable({ guests }: GuestsTableProps) {
+  const router = useRouter();
   const [search, setSearch] = useState("");
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // ── FILTER ──
   const filtered = guests.filter((g) => {
@@ -70,6 +75,30 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
     URL.revokeObjectURL(url);
   };
 
+  const handleDelete = async (guest: Guest) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to delete ${guest.first_name} ${guest.last_name}'s RSVP? This cannot be undone.`,
+    );
+    if (!confirmed) return;
+
+    setDeletingId(guest.id);
+    try {
+      const res = await fetch(`/api/admin/guests/${guest.id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) throw new Error("Failed to delete");
+
+      // Refresh server data
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to delete guest. Please try again.");
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-[2.4rem]">
       {/* Controls */}
@@ -99,71 +128,17 @@ export default function GuestsTable({ guests }: GuestsTableProps) {
         Showing {filtered.length} of {guests.length} guests
       </p>
 
-      {/* Table */}
-      {filtered.length === 0 ? (
-        <div className="text-center py-[6.4rem] border-[0.5px] border-(--color-gold-dim)">
-          <p className="font-serif italic text-[1.8rem] text-(--color-text-muted)">
-            No guests found
-          </p>
-        </div>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full border-[0.5px] border-(--color-gold-dim) text-left border-collapse">
-            <thead>
-              <tr className="bg-(--bg-admin-sidebar) border-b-[0.5px] border-(--color-gold-dim)">
-                {["Guest ID", "Name", "Email", "Phone", "Guests", "Date"].map(
-                  (h) => (
-                    <th
-                      key={h}
-                      className="px-[1.6rem] py-[1.4rem] text-[1rem] tracking-[0.16em] uppercase text-(--color-gold) font-medium font-sans whitespace-nowrap"
-                    >
-                      {h}
-                    </th>
-                  ),
-                )}
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((guest, i) => (
-                <tr
-                  key={guest.id}
-                  className={`border-b-[0.5px] border-(--color-gold-dim) transition-colors duration-150 hover:bg-(--bg-admin-table-alt)
-                    ${i % 2 === 0 ? "bg-(--bg-admin-table-row)" : "bg-(--bg-admin-table-alt)"}
-                  `}
-                >
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-gold) font-medium whitespace-nowrap">
-                    {guest.guest_id}
-                  </td>
+      <DesktopTable
+        filtered={filtered}
+        onDelete={handleDelete}
+        deletingId={deletingId}
+      />
 
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) whitespace-nowrap">
-                    {guest.first_name} {guest.last_name}
-                  </td>
-
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary)">
-                    {guest.email}
-                  </td>
-
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
-                    {guest.phone ?? "—"}
-                  </td>
-
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-primary) text-center">
-                    {guest.guest_count}
-                  </td>
-
-                  <td className="px-[1.6rem] py-[1.4rem] font-sans text-[1.4rem] text-(--color-text-muted) whitespace-nowrap">
-                    {new Date(guest.submitted_at).toLocaleDateString("en-GB", {
-                      day: "2-digit",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      <MobileTable
+        filtered={filtered}
+        onDelete={handleDelete}
+        deletingId={deletingId}
+      />
     </div>
   );
 }

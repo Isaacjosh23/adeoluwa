@@ -1,6 +1,7 @@
 import CardIcon from "@/ui/icons/card";
 import GuestIcon from "@/ui/icons/guest";
 import MenuGridIcon from "@/ui/icons/menu-grid";
+import MessagesIcon from "@/ui/icons/messages";
 
 export const TABS = [
   {
@@ -13,6 +14,13 @@ export const TABS = [
     href: "/admin/guests",
     icon: <GuestIcon className="size-7" />,
   },
+
+  {
+    label: "Messages",
+    href: "/admin/messages",
+    icon: <MessagesIcon className="size-7" />,
+  },
+
   {
     label: "Event Passes",
     href: "/admin/passes",
