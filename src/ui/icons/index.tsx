@@ -6,6 +6,7 @@ import ChurchIcon from "./church";
 import ClockIcon from "./clock";
 import CloseIcon from "./close";
 import DateIcon from "./date";
+import DeleteIcon from "./delete";
 import ExitIcon from "./exit";
 import GuestIcon from "./guest";
 import HallIcon from "./hall";
@@ -14,6 +15,7 @@ import LeftArrowIcon from "./left-arrow";
 import MapPinIcon from "./map-pin";
 import MenuIcon from "./menu";
 import MenuGridIcon from "./menu-grid";
+import MessagesIcon from "./messages";
 import MuteIcon from "./mute";
 import RightAltArrowIcon from "./right-alt-arrow";
 import RightArrowIcon from "./right-arrow";
@@ -50,6 +52,9 @@ export function Icon({ type, className }: Props) {
     case "date":
       return <DateIcon {...props} />;
 
+    case "delete":
+      return <DeleteIcon {...props} />;
+
     case "exit":
       return <ExitIcon {...props} />;
 
@@ -73,6 +78,9 @@ export function Icon({ type, className }: Props) {
 
     case "menu-grid":
       return <MenuGridIcon {...props} />;
+
+    case "messages":
+      return <MessagesIcon {...props} />;
 
     case "mute":
       return <MuteIcon {...props} />;

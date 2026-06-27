@@ -6,7 +6,7 @@ export default async function AdminOverviewPage() {
 
   const { data: rsvps } = await supabase
     .from("rsvps")
-    .select("guest_count, status");
+    .select("guest_count, message");
 
   const safeRsvps = rsvps ?? [];
 
@@ -16,6 +16,9 @@ export default async function AdminOverviewPage() {
     (sum, r) => sum + (r.guest_count || 0),
     0,
   );
+
+  const totalMessages =
+    rsvps?.filter((r) => r.message && r.message.trim() !== "").length ?? 0;
 
   return (
     <div className="px-[2.4rem] sm:px-16 py-16 sm:py-[4.8rem] pt-40 lg:pt-[4.8rem]">
@@ -36,6 +39,7 @@ export default async function AdminOverviewPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.6rem]">
         <StatCard label="Total RSVPs" value={totalRsvps} />
         <StatCard label="Total Guests" value={totalGuests} />
+        <StatCard label="Messages" value={totalMessages} />
       </div>
     </div>
   );
