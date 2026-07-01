@@ -1,4 +1,16 @@
-export const RULES = [
+interface Rule {
+  number: string;
+  title: string;
+  description: string;
+  accounts?: {
+    bank: string;
+    name: string;
+    number: string;
+    currency: string;
+  }[];
+}
+
+export const RULES: Rule[] = [
   {
     number: "01",
     title: "RSVP Required",
@@ -31,6 +43,21 @@ export const RULES = [
     number: "05",
     title: "Gifting",
     description:
-      "Your presence is the greatest gift. We'd be honored to have you with us as we tie the knot. If you would like to also give material gifts to the couple, you can look through the gift registry",
+      "Your presence is a great gift to us. But if you'd to support our next phase, your gifts are greatly appreciated.",
+
+    accounts: [
+      {
+        bank: "United Bank for Africa (UBA)",
+        name: "Adedamola Adewole",
+        number: "2230075562",
+        currency: "NGN",
+      },
+      {
+        bank: "Guarantee Trust Bank (GTB)",
+        name: "Oluwaseun Aiyenuro",
+        number: "0749229673",
+        currency: "USD",
+      },
+    ],
   },
 ];
