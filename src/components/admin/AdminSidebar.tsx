@@ -43,7 +43,7 @@ export default function AdminSidebar({ userEmail }: { userEmail: string }) {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-screen w-104 bg-(--bg-admin-sidebar) border-r-[0.5px] border-(--color-gold-dim) flex flex-col z-795 transition-transform duration-300
+        className={`fixed top-0 left-0 h-dvh overflow-y-auto w-104 bg-(--bg-admin-sidebar) border-r-[0.5px] border-(--color-gold-dim) flex flex-col z-795 transition-transform duration-300
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0
         `}
       >
