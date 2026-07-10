@@ -6,7 +6,6 @@ interface Message {
   message: string;
 }
 
-// ── SERVER COMPONENT — fetches data ──
 export default async function Home() {
   const supabase = await createClient();
 

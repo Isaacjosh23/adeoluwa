@@ -1,7 +1,7 @@
 "use client";
 
 import IntroGate from "@/components/IntroGate";
-import Hero from "@/components/time-line/hero/Hero";
+import Hero from "@/components/hero/Hero";
 import Marquee from "@/components/Marquee";
 import { HeroProvider, useHero } from "@/context/HeroContext";
 import Countdown from "@/components/Countdown";

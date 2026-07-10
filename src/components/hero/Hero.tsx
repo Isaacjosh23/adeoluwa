@@ -7,7 +7,7 @@ import Slides from "./components/Slides";
 import MainContent from "./components/MainContent";
 
 export default function Hero() {
-  const { audioRef, musicStarted } = useHero();
+  const { musicStarted } = useHero();
 
   return (
     <section
@@ -21,10 +21,6 @@ export default function Hero() {
       <MainContent />
 
       <SlidesDot />
-
-      {/* <audio ref={audioRef} loop>
-        <source src="/audio/bg-music.mp3" type="audio/mpeg" />
-      </audio> */}
 
       {musicStarted && <Music />}
     </section>

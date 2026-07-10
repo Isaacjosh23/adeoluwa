@@ -26,7 +26,6 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
   return (
     <>
       <div className="min-h-screen bg-(--bg-etiquette) px-[2.4rem] sm:px-[4.8rem] py-[6.4rem]">
-        {/* Back button */}
         <button
           onClick={() => router.back()}
           className="inline-flex items-center gap-[0.8rem] text-(--color-text-muted) hover:text-(--color-gold) transition-colors duration-200 font-sans text-[1.1rem] tracking-[0.14em] uppercase mb-[4.8rem] font-medium cursor-pointer"
@@ -47,7 +46,6 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
           Back to site
         </button>
 
-        {/* Header */}
         <div className="mb-[4.8rem]">
           <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.3em] uppercase text-(--color-gold) font-medium font-sans mb-[1.2rem]">
             From our guests
@@ -57,12 +55,11 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
             <em className="italic text-(--color-gold-light)">love</em>
           </h1>
           <p className="font-serif italic text-[1.7rem] font-normal text-(--color-text-muted) mt-[1.6rem]">
-            {messages.length} {messages.length === 1 ? "message" : "messages"}{" "}
-            from people who love you both.
+            {messages.length === 1 ? "message" : "messages"} from people who
+            love you both.
           </p>
         </div>
 
-        {/* Empty state */}
         {messages.length === 0 ? (
           <div className="text-center py-32">
             <p className="font-serif italic text-[2rem] text-(--color-text-muted)">
@@ -88,17 +85,14 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
                   key={m.id}
                   className="border-[0.5px] border-(--color-gold-dim) bg-[rgba(196,145,58,0.03)] p-[2.8rem] flex flex-col gap-[1.6rem] hover:border-(--color-gold) transition-colors duration-300"
                 >
-                  {/* Quote mark */}
                   <span className="font-serif text-[3.6rem] text-(--color-gold) leading-none opacity-30 shrink-0">
                     &quot;
                   </span>
 
-                  {/* Message preview */}
                   <p className="font-serif italic text-[1.6rem] text-[rgba(250,247,242,0.75)] leading-[1.75] mt-[-0.8rem] flex-1">
                     {preview}
                   </p>
 
-                  {/* Read more */}
                   {isLong && (
                     <button
                       onClick={() => setModalMessage(m)}
@@ -108,10 +102,8 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
                     </button>
                   )}
 
-                  {/* Divider */}
                   <div className="h-[0.5px] bg-(--color-gold-dim) w-full" />
 
-                  {/* Name + date */}
                   <div className="flex items-end justify-between gap-[1.2rem]">
                     <p className="font-sans text-[1.2rem] tracking-[0.12em] uppercase text-(--color-text-inverse)">
                       — {m.name}
@@ -127,7 +119,6 @@ export default function MessagesClient({ messages }: MessagesClientProps) {
         )}
       </div>
 
-      {/* Modal */}
       {modalMessage && (
         <MessageModal
           message={modalMessage}

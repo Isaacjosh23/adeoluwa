@@ -46,31 +46,26 @@ function MessageTicker({ messages }: MessageTickerProps) {
 
   return (
     <div className="bg-(--bg-etiquette) border-t-[0.5px] border-b-[0.5px] border-(--color-gold-dim) py-[3.2rem] overflow-hidden">
-      {/* Label */}
       <p className="text-[1rem] sm:text-[1.3rem] tracking-[0.28em] uppercase text-(--color-gold) font-medium font-sans text-center mb-[2.4rem]">
         Messages from our guests
       </p>
 
-      {/* Ticker — whitespace-nowrap only on this row, not the outer wrapper */}
       <div className="flex gap-[1.6rem] animate-message-ticker w-max whitespace-nowrap hover:[animation-play-state:paused]">
         {items.map((item, i) => (
           <div
             key={i}
-            className="w-[28rem] h-[26rem] shrink-0 border-[0.5px] border-(--color-gold-dim) bg-[rgba(196,145,58,0.03)] p-[2.4rem] flex flex-col gap-[1.2rem] hover:border-(--color-gold) transition-colors duration-300 cursor-pointer whitespace-normal overflow-hidden"
+            className="w-md h-104 shrink-0 border-[0.5px] border-(--color-gold-dim) bg-[rgba(196,145,58,0.03)] p-[2.4rem] flex flex-col gap-[1.2rem] hover:border-(--color-gold) transition-colors duration-300 cursor-pointer whitespace-normal overflow-hidden"
           >
-            {/* Quote mark */}
             <span className="font-serif text-[3.2rem] text-(--color-gold) leading-none opacity-40 shrink-0">
               &quot;
             </span>
 
-            {/* Message — clamped to 4 lines max */}
             <p className="font-serif italic text-[1.4rem] text-[rgba(250,247,242,0.7)] leading-[1.7] mt-[-0.8rem] overflow-hidden line-clamp-4 flex-1">
               {item.message.length > TICKER_TRUNCATE_AT
                 ? item.message.slice(0, TICKER_TRUNCATE_AT).trimEnd() + "..."
                 : item.message}
             </p>
 
-            {/* Name */}
             <p className="font-sans text-[1.1rem] tracking-[0.12em] uppercase text-(--color-text-muted) shrink-0">
               — {item.name}
             </p>
