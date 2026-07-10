@@ -154,7 +154,15 @@ export function HeroProvider({ children }: { children: React.ReactNode }) {
     setMusicStarted,
   };
 
-  return <HeroContext.Provider value={value}>{children}</HeroContext.Provider>;
+  return (
+    <HeroContext.Provider value={value}>
+      <audio ref={audioRef} loop style={{ display: "none" }}>
+        <source src="/audio/bg-music.mp3" type="audio/mpeg" />
+      </audio>
+
+      {children}
+    </HeroContext.Provider>
+  );
 }
 
 export function useHero() {
