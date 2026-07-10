@@ -22,9 +22,9 @@ export default function Hero() {
 
       <SlidesDot />
 
-      <audio ref={audioRef} loop>
+      {/* <audio ref={audioRef} loop>
         <source src="/audio/bg-music.mp3" type="audio/mpeg" />
-      </audio>
+      </audio> */}
 
       {musicStarted && <Music />}
     </section>
