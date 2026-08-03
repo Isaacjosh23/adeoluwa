@@ -36,7 +36,7 @@ export default function RSVP() {
               We&apos;re saving you a seat and a plate — just say the word. RSVP
               closes{" "}
               <strong className="not-italic font-medium text-(--color-text-primary)">
-                July 31, 2026.
+                August 10, 2026.
               </strong>
             </p>
           </div>
